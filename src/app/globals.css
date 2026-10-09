@@ -1,0 +1,122 @@
+@import "tailwindcss";
+@import "lenis/dist/lenis.css";
+
+/* Palette tirée du logo : bleu nuit + or, et la terre cuite de la façade. */
+@theme {
+  --color-night: #0c1724;
+  --color-night-soft: #15243a;
+  --color-gold: #c8a35a;
+  --color-gold-light: #e2c992;
+  --color-ivory: #f7f3ec;
+  --color-sand: #ece4d6;
+  --color-terracotta: #c4623a;
+  --color-ink: #1b1d22;
+  --color-muted: #5f6470;
+
+  --font-display: var(--font-cormorant), ui-serif, Georgia, serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-ivory);
+    color: var(--color-ink);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-night);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .container-x {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    padding: 0.85rem 1.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition:
+      background-color 0.3s var(--ease-out-expo),
+      color 0.3s var(--ease-out-expo),
+      transform 0.3s var(--ease-out-expo),
+      box-shadow 0.3s var(--ease-out-expo);
+  }
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  .btn-gold {
+    background: var(--color-gold);
+    color: var(--color-night);
+    box-shadow: 0 10px 30px -12px rgb(200 163 90 / 0.7);
+  }
+  .btn-gold:hover {
+    background: var(--color-gold-light);
+  }
+  .btn-ghost {
+    border: 1px solid rgb(255 255 255 / 0.4);
+    color: white;
+  }
+  .btn-ghost:hover {
+    background: rgb(255 255 255 / 0.1);
+  }
+  .btn-dark {
+    background: var(--color-night);
+    color: var(--color-ivory);
+  }
+  .btn-dark:hover {
+    background: var(--color-night-soft);
+  }
+}
