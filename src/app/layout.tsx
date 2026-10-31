@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     siteName: site.name,
-    images: [{ url: "/images/studio/03.jpg", width: 1600, height: 1059, alt: "Façade de la Résidence La Lionne" }],
+    images: [{ url: "/images/residence/facade.jpg", width: 1920, height: 1080, alt: "Façade de la Résidence La Lionne" }],
   },
 };
 
@@ -44,7 +44,7 @@ const jsonLd = {
   name: site.name,
   description: site.description,
   url: site.url,
-  image: `${site.url}/images/studio/03.jpg`,
+  image: `${site.url}/images/residence/facade.jpg`,
   telephone: site.phones[0].tel,
   email: site.email,
   address: {

@@ -7,7 +7,7 @@ import { whatsappLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = {
   title: "Infos pratiques",
-  description: `Arrivée à partir de ${site.checkIn}, départ avant ${site.checkOut}, état des lieux et conditions de séjour à la Résidence La Lionne.`,
+  description: `Arrivée à partir de ${site.checkIn}, départ avant ${site.checkOut} et conditions de séjour à la Résidence La Lionne.`,
 };
 
 export default function InfosPratiquesPage() {

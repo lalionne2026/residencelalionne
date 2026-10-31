@@ -3,7 +3,7 @@ import { formatPrice, type Appartement } from "@/content/appartements";
 import { Icon } from "@/components/icons";
 import { Photo } from "@/components/photo";
 
-export function AppartementCard({ appartement, priority = false }: { appartement: Appartement; priority?: boolean }) {
+export function AppartementCard({ appartement, preload = false }: { appartement: Appartement; preload?: boolean }) {
   return (
     <Link href={`/appartements/${appartement.slug}`} className="group block">
       <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-sand shadow-sm shadow-night/5 transition-shadow duration-500 group-hover:shadow-xl group-hover:shadow-night/15">
@@ -11,7 +11,7 @@ export function AppartementCard({ appartement, priority = false }: { appartement
           src={appartement.cover}
           alt={appartement.gallery[0]?.alt ?? appartement.name}
           fill
-          priority={priority}
+          preload={preload}
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 85vw"
           className="object-cover transition-transform duration-[1.2s] ease-out-expo group-hover:scale-[1.06]"
         />

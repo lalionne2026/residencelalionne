@@ -48,7 +48,8 @@ export function Gallery({ photos, id }: { photos: Photo[]; id: string }) {
             className={`group relative overflow-hidden rounded-xl bg-sand ${
               i === 0 ? "col-span-2 row-span-2 aspect-square md:aspect-auto" : "aspect-square"
             }`}
-            initial={{ opacity: 0, y: 20 }}
+            // La grande photo, visible dès l'arrivée, s'affiche sans attendre le JavaScript.
+            initial={i === 0 ? false : { opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-5% 0px" }}
             transition={{ duration: 0.7, delay: (i % 4) * 0.06, ease: [0.16, 1, 0.3, 1] }}
@@ -59,6 +60,7 @@ export function Gallery({ photos, id }: { photos: Photo[]; id: string }) {
               alt={photo.alt}
               fill
               sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+              preload={i === 0}
               placeholder={photo.blurDataURL ? "blur" : "empty"}
               blurDataURL={photo.blurDataURL}
               className="object-cover transition-transform duration-700 group-hover:scale-105"

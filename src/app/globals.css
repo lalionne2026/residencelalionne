@@ -120,3 +120,62 @@
     background: var(--color-night-soft);
   }
 }
+
+/* Défilement horizontal infini (témoignages) : la piste contient la liste en double et glisse de la moitié. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Animations d'entrée du hero en CSS pur : elles démarrent dès l'affichage de la page,
+   sans attendre le chargement du JavaScript (le texte principal s'affiche donc plus vite). */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes hero-word {
+  from {
+    transform: translateY(110%);
+  }
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1.15);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@layer components {
+  .hero-in {
+    animation: hero-in 0.8s var(--ease-out-expo) both;
+  }
+  .hero-word {
+    animation: hero-word 1s var(--ease-out-expo) both;
+  }
+  .hero-zoom {
+    animation: hero-zoom 7s ease-out both;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-in,
+    .hero-word,
+    .hero-zoom {
+      animation: none;
+    }
+  }
+}

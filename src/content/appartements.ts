@@ -15,8 +15,10 @@ const commonFeatures = [
   "Climatisation individuelle",
   "Douche avec jacuzzi",
   "Cuisine équipée",
+  "Lits deux places (1,60 m)",
+  "Matelas médicaux",
   "Wi-Fi",
-  "TV écran plat",
+  "Écran plasma 55 pouces",
   "Linge de maison fourni",
 ];
 
@@ -52,10 +54,9 @@ export const appartements: Appartement[] = [
     summary:
       "Salon élégant aux tons rouge et bleu nuit, trois chambres climatisées et une cuisine complète pour vivre comme à la maison.",
     features: commonFeatures,
-    cover: "/images/appartement-2/02.jpg",
+    cover: "/images/appartement-2/03.jpg",
     gallery: [
-      { src: "/images/appartement-2/02.jpg", alt: "Salon avec fauteuils rouges et bleus" },
-      { src: "/images/appartement-2/03.jpg", alt: "Salle à manger et salon" },
+      { src: "/images/appartement-2/03.jpg", alt: "Salle à manger et salon avec fauteuils rouges et bleus" },
       { src: "/images/appartement-2/01.jpg", alt: "Salle de bain avec jacuzzi" },
       { src: "/images/appartement-2/04.jpg", alt: "Cuisine équipée" },
       { src: "/images/appartement-2/05.jpg", alt: "Chambre avec lit double" },
@@ -76,8 +77,6 @@ export const appartements: Appartement[] = [
     gallery: [
       { src: "/images/appartement-3/01.jpg", alt: "Salon avec canapés rouges" },
       { src: "/images/appartement-3/02.jpg", alt: "Cuisine équipée" },
-      { src: "/images/appartement-3/04.jpg", alt: "Chambre avec lit double et fauteuil" },
-      { src: "/images/appartement-3/03.jpg", alt: "Chambre aux tons roses" },
       { src: "/images/appartement-3/05.jpg", alt: "Salle de bain avec baignoire jacuzzi" },
     ],
   },
@@ -88,7 +87,7 @@ export const appartements: Appartement[] = [
     price: 45000,
     minGuests: 2,
     summary:
-      "Salon aux couleurs vives, deux chambres reposantes et une salle de bain moderne : le confort d'un hôtel, l'espace en plus.",
+      "Salon aux couleurs vives, deux chambres reposantes et une salle de bain moderne : le confort d'une résidence, l'espace en plus.",
     features: commonFeatures,
     cover: "/images/appartement-4/01.jpg",
     gallery: [
@@ -103,16 +102,23 @@ export const appartements: Appartement[] = [
     slug: "studio",
     name: "Studio",
     type: "Studio",
-    // TODO(propriétaire) : indiquer le prix du studio.
-    price: null,
+    price: 25000,
     minGuests: 1,
     summary:
       "Une chambre moderne et tout équipée avec salle de bain privative : la formule idéale pour un voyageur seul ou un court séjour.",
-    features: ["Climatisation individuelle", "Salle de bain privative", "Wi-Fi", "TV écran plat", "Coin bureau"],
-    cover: "/images/studio/04.jpg",
+    features: [
+      "Climatisation individuelle",
+      "Lit deux places (1,60 m)",
+      "Matelas médical",
+      "Salle de bain privative",
+      "Wi-Fi",
+      "Écran plasma 55 pouces",
+      "Coin bureau",
+    ],
+    cover: "/images/studio/chambre.jpg",
     gallery: [
-      { src: "/images/studio/04.jpg", alt: "Studio avec lit double, fauteuil et TV" },
-      { src: "/images/studio/05.jpg", alt: "Salle de bain du studio" },
+      { src: "/images/studio/chambre.jpg", alt: "Studio avec lit double, fauteuil, coiffeuse et TV" },
+      { src: "/images/studio/salle-de-bain.jpg", alt: "Salle de bain du studio" },
     ],
   },
 ];

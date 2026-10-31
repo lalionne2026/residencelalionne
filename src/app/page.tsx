@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Hero } from "@/components/hero";
+import { Energie } from "@/components/energie";
 import { AppartementCard } from "@/components/appartement-card";
 import { Photo } from "@/components/photo";
 import { SectionHeading } from "@/components/section-heading";
@@ -11,7 +12,7 @@ import { highlights, residencePhotos, rules, services, site, testimonials } from
 import { imageMeta } from "@/lib/images";
 import { whatsappLink } from "@/lib/whatsapp";
 
-const heroImage = { src: "/images/studio/03.jpg", alt: "Façade de la Résidence La Lionne entourée de verdure" };
+const heroImage = { src: "/images/residence/facade.jpg", alt: "Façade de la Résidence La Lionne entourée de verdure" };
 
 export default function Home() {
   return (
@@ -44,7 +45,7 @@ export default function Home() {
                   Un lieu simple, cordial <em className="text-terracotta">et très calme.</em>
                 </>
               }
-              intro={`${site.name} vous propose des appartements haut standing de deux et trois chambres et des studios modernes. Grandes chambres, salon spacieux, douches avec jacuzzi et climatisation réglable dans chaque pièce : tout est pensé pour que votre séjour soit reposant.`}
+              intro={`${site.name} vous propose des logements haut standing, du studio aux appartements de deux et trois chambres. Grandes chambres avec lits deux places (1,60 m) et matelas médicaux, salon spacieux avec écran plasma de 55 pouces, cuisine équipée, balcon et véranda, douches avec jacuzzi et climatisation réglable dans chaque pièce. Un endroit simple, cordial et très calme, où tout est pensé pour que votre séjour soit reposant.`}
             />
             <Reveal delay={0.15} className="mt-8">
               <Link href="/infos-pratiques" className="group inline-flex items-center gap-2 font-semibold text-night">
@@ -141,22 +142,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Énergie & parking */}
+      <Energie />
+
       {/* Avis clients */}
       {testimonials.length > 0 && (
-        <section className="py-20 md:py-32">
+        <section className="bg-sand/60 py-20 md:py-32">
           <div className="container-x">
-            <Reveal>
-              <p className="eyebrow text-center">Ils ont séjourné chez nous</p>
-            </Reveal>
-            <Reveal delay={0.1} className="mt-6">
-              <Testimonials />
-            </Reveal>
+            <SectionHeading
+              align="center"
+              eyebrow="Ils ont séjourné chez nous"
+              title={
+                <>
+                  Ils nous font <em className="text-terracotta">confiance.</em>
+                </>
+              }
+            />
           </div>
+          <Reveal delay={0.1} className="mt-12 md:mt-16">
+            <Testimonials />
+          </Reveal>
         </section>
       )}
 
       {/* La résidence en images */}
-      <section className="pb-20 md:pb-32">
+      <section className="py-20 md:py-32">
         <div className="container-x">
           <SectionHeading eyebrow="La résidence" title="Entre palmiers et tranquillité" />
           <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-4 md:gap-4">
@@ -198,7 +208,7 @@ export default function Home() {
               </div>
             </div>
             <ul className="space-y-5">
-              {rules.slice(1, 4).map((r) => (
+              {rules.slice(0, 3).map((r) => (
                 <li key={r.title} className="flex gap-4">
                   <Icon name="check" className="mt-0.5 size-5 shrink-0 text-gold" />
                   <p className="text-sm leading-relaxed text-ink/80">
@@ -213,7 +223,7 @@ export default function Home() {
 
       {/* Appel à l'action */}
       <section className="relative overflow-hidden bg-night py-24 text-center text-ivory md:py-36">
-        <Photo src="/images/divers/09.jpg" alt="" fill sizes="100vw" className="object-cover opacity-25" />
+        <Photo src="/images/studio/chambre.jpg" alt="" fill sizes="100vw" className="object-cover opacity-25" />
         <div className="container-x relative">
           <Reveal>
             <p className="eyebrow">Réservation</p>

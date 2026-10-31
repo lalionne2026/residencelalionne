@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { AppartementCard } from "@/components/appartement-card";
 import { PageHeader } from "@/components/page-header";
-import { RevealGroup, RevealItem } from "@/components/reveal";
+import { Reveal } from "@/components/reveal";
 import { appartements } from "@/content/appartements";
 
 export const metadata: Metadata = {
@@ -19,13 +19,20 @@ export default function AppartementsPage() {
         intro="Tous nos logements sont meublés, climatisés et équipés. Choisissez celui qui correspond à votre séjour."
       />
       <section className="py-20 md:py-28">
-        <RevealGroup className="container-x grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-          {appartements.map((a, i) => (
-            <RevealItem key={a.slug} as="article">
-              <AppartementCard appartement={a} priority={i < 3} />
-            </RevealItem>
-          ))}
-        </RevealGroup>
+        <div className="container-x grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
+          {appartements.map((a, i) =>
+            // Première rangée (visible dès l'arrivée) : animation CSS immédiate ; les suivantes apparaissent au défilement.
+            i < 3 ? (
+              <article key={a.slug} className="hero-in" style={{ animationDelay: `${0.15 + i * 0.1}s` }}>
+                <AppartementCard appartement={a} preload={i === 0} />
+              </article>
+            ) : (
+              <Reveal key={a.slug} as="article">
+                <AppartementCard appartement={a} />
+              </Reveal>
+            ),
+          )}
+        </div>
       </section>
     </>
   );

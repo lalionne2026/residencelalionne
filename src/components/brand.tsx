@@ -11,7 +11,7 @@ export function Brand({ size = "md" }: { size?: "md" | "lg" }) {
         width={logo}
         height={logo}
         className="shrink-0 rounded-full ring-1 ring-gold/50"
-        priority={size === "md"}
+        preload={size === "md"}
       />
       <span className="flex flex-col leading-none">
         <span className="text-[0.62rem] font-semibold uppercase tracking-[0.32em] text-ivory/70">La Résidence</span>
