@@ -1,20 +1,39 @@
-# La Résidence La Lionne
+# La Résidence La Lionne — site web
 
-Site vitrine de **La Résidence La Lionne** (Congo) : appartements meublés haut standing de 2 et 3 chambres et studios. Refonte en Next.js de l'ancien site Strikingly ([laresidencelalionne.mystrikingly.com](https://laresidencelalionne.mystrikingly.com)).
+Site vitrine de **La Résidence La Lionne** (Congo) : du studio aux appartements meublés haut standing de 2 et 3 chambres, à partir de 25 000 FCFA la nuit.
 
-## Stack
+Ce dépôt contient tout le site : les textes, les prix, les photos et le code.
 
-| Outil | Rôle |
+---
+
+## Je veux modifier le site (sans être développeur)
+
+Suivez le **[guide de mise à jour](docs/guide/README.md)**. Il explique pas à pas, avec des exemples, comment :
+
+| Je veux… | Guide |
 |---|---|
-| [Next.js 16](https://nextjs.org) (App Router, Turbopack) | Pages, routage, optimisation des images, SEO |
-| TypeScript | Typage |
-| Tailwind CSS 4 | Styles (palette dans `src/app/globals.css`) |
-| [Motion](https://motion.dev) | Animations (apparitions au scroll, parallaxe, galerie plein écran) |
-| [Lenis](https://lenis.darkroom.engineering) | Défilement fluide |
-| sharp | Optimisation des photos et aperçus flous |
-| playwright-core | Captures d'écran mobile / ordinateur |
+| Comprendre comment ça marche et ne rien casser | [Avant de commencer](docs/guide/01-avant-de-commencer.md) |
+| Changer un téléphone, l'email, les horaires, les règles, les services | [Textes et coordonnées](docs/guide/02-textes-et-coordonnees.md) |
+| Changer un prix, une description ou les équipements d'un logement | [Prix et appartements](docs/guide/03-prix-et-appartements.md) |
+| Ajouter, remplacer ou supprimer une photo | [Photos](docs/guide/04-photos.md) |
+| Ajouter un avis client | [Témoignages](docs/guide/05-temoignages.md) |
+| Vérifier que la modification est en ligne, ou annuler une erreur | [Publier et annuler](docs/guide/06-publier-et-annuler.md) |
+| Résoudre un problème | [Dépannage](docs/guide/07-depannage.md) |
 
-## Démarrer
+> **En résumé :** tout le contenu est dans **2 fichiers** du dossier `src/content/` (`site.ts` et `appartements.ts`) et les photos dans `public/images/`. On n'a jamais besoin de toucher au reste.
+
+---
+
+## Je suis développeur
+
+| Document | Contenu |
+|---|---|
+| [Architecture](docs/technique/architecture.md) | Stack, structure des dossiers, pages, animations |
+| [Sécurité et performances](docs/technique/securite-et-performances.md) | En-têtes HTTP, mises à jour, mesures de vitesse |
+| [Versions et workflow Git](docs/technique/versions-et-git.md) | Branches, messages de commit, numéros de version |
+| [CHANGELOG](CHANGELOG.md) | Historique des versions |
+
+Démarrage rapide :
 
 ```bash
 npm install
@@ -25,44 +44,9 @@ npm run dev        # http://localhost:3000
 |---|---|
 | `npm run dev` | Serveur de développement (rechargement automatique) |
 | `npm run build` | Build de production |
+| `npm run start` | Sert le build de production |
 | `npm run lint` | Vérification ESLint |
-| `npm run images` | Optimise `public/images/` et régénère les aperçus flous — **à lancer après chaque ajout de photo** |
-| `npm run screenshot -- /chemin dossier` | Captures mobile (iPhone) et ordinateur de la page, serveur lancé (nécessite Google Chrome) |
+| `npm run images` | Optimise `public/images/` et régénère les aperçus flous — **après chaque ajout de photo** |
+| `npm run screenshot -- /chemin dossier` | Captures mobile et ordinateur d'une page (serveur lancé, Google Chrome requis) |
 
-## Pages
-
-| Route | Contenu |
-|---|---|
-| `/` | Accueil : accroche animée, chiffres clés, appartements, services, avis, photos, horaires |
-| `/appartements` | Liste des logements |
-| `/appartements/[slug]` | Fiche : galerie plein écran, équipements, tarif, réservation WhatsApp |
-| `/infos-pratiques` | Arrivée, état des lieux, départ, règles |
-| `/contact` | Coordonnées + formulaire qui prépare la demande sur WhatsApp |
-
-## Modifier le contenu
-
-Tout le texte est dans `src/content/` — pas besoin de toucher aux composants :
-
-- **`site.ts`** : nom, téléphones, WhatsApp, email, réseaux sociaux, services, règles, **avis clients**
-- **`appartements.ts`** : chaque logement (prix, description, équipements, photos)
-- **Photos** : à déposer dans `public/images/<dossier>/`, puis `npm run images`
-
-Les points à confirmer avec le propriétaire sont marqués `TODO(propriétaire)` dans le code.
-
-## Structure
-
-```
-src/
-  app/          pages, layout, SEO (sitemap, robots, JSON-LD)
-  components/   en-tête, hero, galerie, cartes, animations (reveal.tsx)…
-  content/      textes, prix, photos (+ images.generated.json)
-  lib/          utilitaires (lien WhatsApp, métadonnées d'images)
-scripts/        optimisation des images, captures d'écran
-```
-
-## Workflow
-
-1. Une branche par fonctionnalité (`feat/…`, `fix/…`) à partir de `main`
-2. `npm run lint && npm run build` avant chaque push
-3. Pull request → relecture → fusion dans `main`
-4. Déploiement : Vercel (aperçu automatique pour chaque pull request)
+Les points encore à confirmer avec le propriétaire sont marqués `TODO(propriétaire)` dans le code.
