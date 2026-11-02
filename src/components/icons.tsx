@@ -1,6 +1,18 @@
 import type { ServiceIcon } from "@/content/site";
 
-type IconName = ServiceIcon | "whatsapp" | "phone" | "mail" | "pin" | "youtube" | "arrow" | "check" | "users" | "close";
+type IconName =
+  | ServiceIcon
+  | "whatsapp"
+  | "phone"
+  | "mail"
+  | "pin"
+  | "youtube"
+  | "facebook"
+  | "tiktok"
+  | "arrow"
+  | "check"
+  | "users"
+  | "close";
 
 const paths: Record<IconName, React.ReactNode> = {
   shield: <path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.6 7.5 9.5 4.3-.9 7.5-4.9 7.5-9.5V6L12 3Zm-3 9 2 2 4-4" />,
@@ -20,6 +32,8 @@ const paths: Record<IconName, React.ReactNode> = {
   mail: <path d="M3 6h18v12H3V6Zm0 0 9 7 9-7" />,
   pin: <path d="M12 21s-7-6.1-7-11.5a7 7 0 1 1 14 0C19 14.9 12 21 12 21Zm0-9a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />,
   youtube: <path d="M2.5 12s0-4 .5-5.5c.3-.9 1-1.5 1.9-1.7C6.6 4.5 12 4.5 12 4.5s5.4 0 7.1.3c.9.2 1.6.8 1.9 1.7.5 1.5.5 5.5.5 5.5s0 4-.5 5.5c-.3.9-1 1.5-1.9 1.7-1.7.3-7.1.3-7.1.3s-5.4 0-7.1-.3c-.9-.2-1.6-.8-1.9-1.7C2.5 16 2.5 12 2.5 12Zm7.5 3 5-3-5-3v6Z" />,
+  facebook: <path d="M14 21v-7.5h2.5l.5-3h-3V8.8c0-.9.3-1.5 1.6-1.5H17V4.6c-.3 0-1.2-.1-2.3-.1-2.3 0-3.7 1.4-3.7 3.9v2.1H8.5v3H11V21" />,
+  tiktok: <path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.4 2.6 2.2 4.4 5 4.6" />,
   arrow: <path d="M5 12h14m-5-5 5 5-5 5" />,
   check: <path d="m5 12.5 4.5 4.5L19 7.5" />,
   users: (

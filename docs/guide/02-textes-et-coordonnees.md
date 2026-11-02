@@ -31,7 +31,7 @@ Pour **supprimer** un numéro, effacez la ligne entière.
 Cherchez `whatsapp:`. C'est le numéro qui reçoit **toutes les demandes de réservation** du site.
 
 ```ts
-  whatsapp: "242065624670",
+  whatsapp: "242061397887",
 ```
 
 ⚠️ Format spécial : indicatif du pays **sans le `+`**, puis le numéro, **sans espaces**.
@@ -52,18 +52,15 @@ Cherchez `whatsapp:`. C'est le numéro qui reçoit **toutes les demandes de rés
 ## Réseaux sociaux
 
 ```ts
-  social: {
-    youtube: "https://www.youtube.com/@residencelalionne",
-    facebook: null as string | null,
-    instagram: null as string | null,
-  },
+  social: [
+    { name: "facebook", label: "Facebook", href: "https://www.facebook.com/share/v/19zgHJZx6r/" },
+    { name: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@lalionne4256" },
+    { name: "youtube", label: "YouTube", href: "https://www.youtube.com/@residencelalionne" },
+  ],
 ```
 
-Pour ajouter la page Facebook, remplacez **`null`** par le lien entre guillemets :
-
-```ts
-    facebook: "https://www.facebook.com/residencelalionne" as string | null,
-```
+Pour changer un lien, remplacez seulement l'adresse entre guillemets après `href:`.
+Pour retirer un réseau, effacez sa ligne entière. Ces liens apparaissent dans le pied de page et sur la page Contact.
 
 ## Heures d'arrivée et de départ
 

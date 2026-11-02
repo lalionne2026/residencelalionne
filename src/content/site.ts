@@ -1,5 +1,4 @@
 // Informations générales de la résidence.
-// TODO(propriétaire) : confirmer la ville exacte, le numéro WhatsApp principal et les liens réseaux sociaux.
 
 export const site = {
   name: "La Résidence La Lionne",
@@ -22,13 +21,14 @@ export const site = {
       note: "Diaspora / international",
     },
   ],
-  whatsapp: "242065624670",
+  whatsapp: "242061397887",
   email: "lalionne2026@gmail.com",
-  social: {
-    youtube: "https://www.youtube.com/@residencelalionne",
-    facebook: null as string | null,
-    instagram: null as string | null,
-  },
+  // Réseaux sociaux affichés dans le pied de page et sur la page Contact.
+  social: [
+    { name: "facebook", label: "Facebook", href: "https://www.facebook.com/share/v/19zgHJZx6r/" },
+    { name: "tiktok", label: "TikTok", href: "https://www.tiktok.com/@lalionne4256" },
+    { name: "youtube", label: "YouTube", href: "https://www.youtube.com/@residencelalionne" },
+  ],
   checkIn: "13h00",
   checkOut: "12h00",
   currency: "FCFA",

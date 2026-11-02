@@ -57,6 +57,26 @@ export default function ContactPage() {
                   </a>
                 </div>
               </li>
+              <li className="flex gap-4">
+                <Icon name="users" className="mt-0.5 size-6 shrink-0 text-gold" />
+                <div>
+                  <p className="font-semibold text-night">Réseaux sociaux</p>
+                  <ul className="mt-1 space-y-1">
+                    {site.social.map((s) => (
+                      <li key={s.name}>
+                        <a
+                          href={s.href}
+                          target="_blank"
+                          rel="noopener"
+                          className="inline-flex items-center gap-2 text-muted transition-colors hover:text-night"
+                        >
+                          <Icon name={s.name} className="size-4" /> {s.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </li>
             </ul>
           </Reveal>
 

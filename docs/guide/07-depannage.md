@@ -33,7 +33,7 @@ Corrigez, enregistrez à nouveau, et attendez la coche verte ✅. Si vous ne tro
 
 ## Le bouton WhatsApp n'ouvre pas la bonne conversation
 
-Vérifiez `whatsapp:` dans `site.ts` : indicatif **sans `+`** et **sans espaces**, par exemple `"242065624670"`.
+Vérifiez `whatsapp:` dans `site.ts` : indicatif **sans `+`** et **sans espaces**, par exemple `"242061397887"`.
 
 ## Toujours bloqué ?
 

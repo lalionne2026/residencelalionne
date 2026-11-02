@@ -47,6 +47,7 @@ const jsonLd = {
   image: `${site.url}/images/residence/facade.jpg`,
   telephone: site.phones[0].tel,
   email: site.email,
+  sameAs: site.social.map((s) => s.href),
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,

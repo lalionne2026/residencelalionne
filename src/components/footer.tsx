@@ -48,11 +48,21 @@ export function Footer() {
                 <Icon name="mail" className="size-5 shrink-0 text-gold" /> {site.email}
               </a>
             </li>
-            <li>
-              <a href={site.social.youtube} target="_blank" rel="noopener" className="flex gap-3 transition-colors hover:text-gold">
-                <Icon name="youtube" className="size-5 shrink-0 text-gold" /> YouTube
-              </a>
-            </li>
+          </ul>
+          <ul className="mt-6 flex gap-3">
+            {site.social.map((s) => (
+              <li key={s.name}>
+                <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={s.label}
+                  className="flex size-10 items-center justify-center rounded-full border border-white/15 text-gold transition-colors hover:border-gold hover:bg-gold hover:text-night"
+                >
+                  <Icon name={s.name} />
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
