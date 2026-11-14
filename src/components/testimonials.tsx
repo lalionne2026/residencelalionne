@@ -48,13 +48,29 @@ function Card({ t }: { t: Testimonial }) {
   );
 }
 
-/** Affiche tous les avis clients en même temps, sans défilement automatique. */
+/** Avis clients qui défilent en boucle, en gardant tous les avis dans la piste. */
 export function Testimonials() {
+  const count = testimonials.length;
+  if (count === 0) return null;
+
   return (
-    <div className="container-x flex flex-wrap justify-center gap-6">
-      {testimonials.map((t) => (
-        <Card key={t.quote} t={t} />
-      ))}
+    <div className="group overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+      <div
+        className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]"
+        style={{ "--marquee-duration": `${count * 8}s` } as React.CSSProperties}
+      >
+        {[0, 1].map((copy) => (
+          <div
+            key={copy}
+            aria-hidden={copy === 1 || undefined}
+            className="flex min-w-full shrink-0 justify-around gap-6"
+          >
+            {testimonials.map((t) => (
+              <Card key={t.quote} t={t} />
+            ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

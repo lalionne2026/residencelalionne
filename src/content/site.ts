@@ -79,10 +79,10 @@ export type ServiceIcon = (typeof services)[number]["icon"];
 
 // Photos de la résidence (extérieur et parties communes).
 export const residencePhotos = [
-  { src: "/images/studio/03.jpg", alt: "Façade de la Résidence La Lionne" },
-  { src: "/images/divers/09.jpg", alt: "Allée arborée entre les bâtiments" },
-  { src: "/images/divers/08.jpg", alt: "Terrasse ombragée avec parasol" },
-  { src: "/images/studio/02.jpg", alt: "Enseigne de la résidence" },
+  { src: "/images/residence/facade.jpg", alt: "Façade de la Résidence La Lionne" },
+  { src: "/images/residence/cour-parking.jpg", alt: "Cour et parking de la résidence" },
+  { src: "/images/residence/terrasse.jpg", alt: "Terrasse ombragée de la résidence" },
+  { src: "/images/residence/enseigne.jpg", alt: "Enseigne de la résidence" },
 ] as const;
 
 export const highlights = [
