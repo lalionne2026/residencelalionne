@@ -41,7 +41,6 @@ export default function ContactPage() {
                       <li key={p.tel}>
                         <a href={`tel:${p.tel}`} className="text-muted transition-colors hover:text-night">
                           {p.label}
-                          {"note" in p && <span className="text-xs"> · {p.note}</span>}
                         </a>
                       </li>
                     ))}

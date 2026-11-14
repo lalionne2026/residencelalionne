@@ -11,7 +11,7 @@ Tout se passe dans le fichier **`src/content/site.ts`**. Lisez d'abord [Avant de
 Cherchez `phones:` (Ctrl + F). Chaque numéro a deux lignes :
 
 ```ts
-    { label: "06 562 46 70", tel: "+242065624670" },
+    { label: "06 139 78 87", tel: "+242061397887" },
 ```
 
 - **`label`** : le numéro **tel qu'il s'affiche** sur le site, écrit comme vous voulez.
@@ -25,6 +25,7 @@ Cherchez `phones:` (Ctrl + F). Chaque numéro a deux lignes :
 
 Pour **ajouter** un numéro, copiez une ligne entière et collez-la juste en dessous, puis modifiez-la.
 Pour **supprimer** un numéro, effacez la ligne entière.
+Actuellement, seul le **06 139 78 87** est configuré pour les appels.
 
 ## Changer le numéro WhatsApp
 
@@ -35,6 +36,7 @@ Cherchez `whatsapp:`. C'est le numéro qui reçoit **toutes les demandes de rés
 ```
 
 ⚠️ Format spécial : indicatif du pays **sans le `+`**, puis le numéro, **sans espaces**.
+Le numéro WhatsApp est le même que celui des appels.
 
 ## Changer l'email ou l'adresse
 

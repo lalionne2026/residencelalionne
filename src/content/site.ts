@@ -12,14 +12,7 @@ export const site = {
     country: "République du Congo",
   },
   phones: [
-    { label: "06 562 46 70", tel: "+242065624670" },
     { label: "06 139 78 87", tel: "+242061397887" },
-    { label: "05 506 56 14", tel: "+242055065614" },
-    {
-      label: "+1 802 391 7806",
-      tel: "+18023917806",
-      note: "Diaspora / international",
-    },
   ],
   whatsapp: "242061397887",
   email: "lalionne2026@gmail.com",
