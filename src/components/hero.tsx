@@ -14,15 +14,25 @@ const lines = [
   { words: ["l'espace", "d'un", "chez-soi."], accent: true },
 ];
 
-export function Hero({ image }: { image: { src: string; alt: string; blurDataURL?: string } }) {
+export function Hero({
+  image,
+}: {
+  image: { src: string; alt: string; blurDataURL?: string };
+}) {
   const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
   // Parallaxe : la photo descend plus lentement que la page et le texte s'efface.
   const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative flex h-[100svh] min-h-[620px] items-end overflow-hidden bg-night">
+    <section
+      ref={ref}
+      className="relative flex h-[100svh] min-h-[620px] items-end overflow-hidden bg-night"
+    >
       <motion.div className="absolute inset-0" style={{ y: imageY }}>
         {/* Zoom lent (effet Ken Burns) */}
         <div className="hero-zoom absolute inset-0">
@@ -43,23 +53,41 @@ export function Hero({ image }: { image: { src: string; alt: string; blurDataURL
       {/* Assombrit le haut pour que le logo et le menu restent lisibles sur le ciel. */}
       <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-night/70 to-transparent" />
 
-      <motion.div style={{ opacity: contentOpacity }} className="container-x relative pb-16 md:pb-28">
+      <motion.div
+        style={{ opacity: contentOpacity }}
+        className="container-x relative pb-16 md:pb-28"
+      >
         <p
           className="hero-in eyebrow flex items-center gap-3 text-[0.66rem]! tracking-[0.14em]! sm:text-xs! sm:tracking-[0.22em]!"
           style={{ animationDelay: "0.1s" }}
         >
-          <span className="hidden h-px w-8 bg-gold sm:block" aria-hidden="true" />
+          <span
+            className="hidden h-px w-8 bg-gold sm:block"
+            aria-hidden="true"
+          />
           {site.tagline}
         </p>
 
         <h1 className="mt-5 max-w-5xl text-[2.2rem] leading-[1.05] text-ivory sm:text-5xl md:text-6xl lg:text-7xl">
           {lines.map((line, l) => (
-            <span key={l} className={`block ${line.accent ? "italic text-gold-light" : ""}`}>
+            <span
+              key={l}
+              className={`block ${line.accent ? "italic text-gold-light" : ""}`}
+            >
               {line.words.map((word, w) => {
-                const i = lines.slice(0, l).reduce((n, prev) => n + prev.words.length, 0) + w;
+                const i =
+                  lines
+                    .slice(0, l)
+                    .reduce((n, prev) => n + prev.words.length, 0) + w;
                 return (
-                  <span key={word + i} className="mr-[0.22em] inline-block overflow-hidden pb-[0.12em] align-bottom last:mr-0">
-                    <span className="hero-word inline-block" style={{ animationDelay: `${0.2 + i * 0.06}s` }}>
+                  <span
+                    key={word + i}
+                    className="mr-[0.22em] inline-block overflow-hidden pb-[0.12em] align-bottom last:mr-0"
+                  >
+                    <span
+                      className="hero-word inline-block"
+                      style={{ animationDelay: `${0.2 + i * 0.06}s` }}
+                    >
                       {word}
                     </span>
                   </span>
@@ -73,15 +101,28 @@ export function Hero({ image }: { image: { src: string; alt: string; blurDataURL
           className="hero-in mt-6 max-w-xl text-[0.95rem] leading-relaxed text-ivory/80 md:text-lg"
           style={{ animationDelay: "0.6s" }}
         >
-          Du studio aux appartements de 2 et 3 chambres, avec jacuzzi, climatisation individuelle et sécurité 24h/24.
-          À partir de <strong className="font-semibold text-ivory">25&nbsp;000&nbsp;FCFA</strong> la nuit.
+          Du studio aux appartements de deux (2) et trois (3) chambres, avec
+          jacuzzi selon le logement, climatisation individuelle et sécurité
+          vingt-quatre (24) heures sur vingt-quatre (24). À partir de{" "}
+          <strong className="font-semibold text-ivory">
+            vingt-cinq mille (25&nbsp;000)&nbsp;FCFA
+          </strong>{" "}
+          la nuit.
         </p>
 
-        <div className="hero-in mt-8 grid gap-3 sm:flex sm:flex-wrap md:mt-9" style={{ animationDelay: "0.75s" }}>
+        <div
+          className="hero-in mt-8 grid gap-3 sm:flex sm:flex-wrap md:mt-9"
+          style={{ animationDelay: "0.75s" }}
+        >
           <Link href="/appartements" className="btn btn-gold">
             Voir les appartements <Icon name="arrow" className="size-4" />
           </Link>
-          <a href={whatsappLink()} target="_blank" rel="noopener" className="btn btn-ghost backdrop-blur-sm">
+          <a
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener"
+            className="btn btn-ghost backdrop-blur-sm"
+          >
             <Icon name="whatsapp" /> Réserver sur WhatsApp
           </a>
         </div>
@@ -92,7 +133,7 @@ export function Hero({ image }: { image: { src: string; alt: string; blurDataURL
         style={{ animationDelay: "1.4s" }}
       >
         Défiler
-        <span className="relative block h-12 w-px overflow-hidden bg-ivory/20">
+        <span className="relative block h-25 w-1 overflow-hidden bg-ivory/20">
           <motion.span
             className="absolute inset-x-0 top-0 h-1/2 bg-gold"
             animate={{ y: ["-100%", "200%"] }}

@@ -14,6 +14,14 @@ import { whatsappLink } from "@/lib/whatsapp";
 
 const heroImage = { src: "/images/residence/facade.jpg", alt: "Façade de la Résidence La Lionne entourée de verdure" };
 
+const servicePhotos = [
+  { src: "/images/services/01.jpg", alt: "Entretien et nettoyage des logements", label: "Ménage" },
+  { src: "/images/services/02.jpg", alt: "Caméra de vidéosurveillance", label: "Vidéosurveillance" },
+  { src: "/images/services/03.jpg", alt: "Agent de sécurité de la résidence", label: "Sécurité" },
+  { src: "/images/services/04.jpg", alt: "Groupe électrogène de la résidence", label: "Électricité" },
+  { src: "/images/services/05.jpg", alt: "Espace d'accueil de la résidence", label: "Accueil" },
+];
+
 export default function Home() {
   return (
     <>
@@ -45,7 +53,7 @@ export default function Home() {
                   Un lieu simple, cordial <em className="text-terracotta">et très calme.</em>
                 </>
               }
-              intro={`${site.name} vous propose des logements haut standing, du studio aux appartements de deux et trois chambres. Grandes chambres avec lits deux places (1,60 m) et matelas médicaux, salon spacieux avec écran plasma de 55 pouces, cuisine équipée, balcon et véranda, douches avec jacuzzi et climatisation réglable dans chaque pièce. Un endroit simple, cordial et très calme, où tout est pensé pour que votre séjour soit reposant.`}
+              intro="Elle est située dans l’arrondissement numéro un (1) LUMUMBA, quartier KM4 MPEMBA, en République du Congo, dans la ville Océane de Pointe-Noire. Arrêt Boulangerie, à la troisième parcelle du goudron. À six (6) minutes de l’aéroport A. NETO, à huit (8) minutes du centre-ville et à dix (10) minutes de la plage. Elle dispose d'une gamme d'hébergements allant du studio aux appartements."
             />
             <Reveal delay={0.15} className="mt-8">
               <Link href="/infos-pratiques" className="group inline-flex items-center gap-2 font-semibold text-night">
@@ -58,8 +66,8 @@ export default function Home() {
           <div className="relative pb-8 sm:pl-10">
             <RevealImage className="relative aspect-4/5 rounded-3xl">
               <Photo
-                src="/images/appartement-1/02.jpg"
-                alt="Salon et salle à manger de l'appartement N°1"
+                src="/images/residence/accueil-salon.jpg"
+                alt="Salon d'accueil de la Résidence La Lionne"
                 fill
                 sizes="(min-width: 768px) 45vw, 100vw"
                 className="object-cover"
@@ -71,8 +79,8 @@ export default function Home() {
             >
               <div className="relative aspect-square">
                 <Photo
-                  src="/images/appartement-1/10.jpg"
-                  alt="Salle de bain avec jacuzzi"
+                  src="/images/residence/accueil-bar.jpg"
+                  alt="Bar d'accueil de la Résidence La Lionne"
                   fill
                   sizes="(min-width: 768px) 20vw, 45vw"
                   className="object-cover"
@@ -125,6 +133,26 @@ export default function Home() {
             title="Tout pour un séjour serein"
             intro="Des services pensés pour les familles, les professionnels en mission et la diaspora de passage au pays."
           />
+          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
+            {servicePhotos.map((photo, i) => (
+              <RevealImage
+                key={photo.src}
+                delay={i * 0.06}
+                className="group relative aspect-[4/3] overflow-hidden rounded-2xl"
+              >
+                <Photo
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-night/80 to-transparent px-4 pb-3 pt-10">
+                  <p className="text-sm font-semibold text-ivory">{photo.label}</p>
+                </div>
+              </RevealImage>
+            ))}
+          </div>
           <RevealGroup className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-white/10 md:mt-16 lg:grid-cols-3">
             {services.map((s) => (
               <RevealItem

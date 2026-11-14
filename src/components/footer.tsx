@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Brand } from "@/components/brand";
-import { nav, site } from "@/content/site";
+import { nav, site, socialLinks } from "@/content/site";
 import { Icon } from "@/components/icons";
 import { whatsappLink } from "@/lib/whatsapp";
 
@@ -50,7 +50,7 @@ export function Footer() {
             </li>
           </ul>
           <ul className="mt-6 flex gap-3">
-            {site.social.map((s) => (
+            {socialLinks.map((s) => (
               <li key={s.name}>
                 <a
                   href={s.href}

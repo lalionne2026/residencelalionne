@@ -3,7 +3,7 @@ import { BookingForm } from "@/components/booking-form";
 import { Icon } from "@/components/icons";
 import { PageHeader } from "@/components/page-header";
 import { Reveal } from "@/components/reveal";
-import { site } from "@/content/site";
+import { site, socialLinks } from "@/content/site";
 
 export const metadata: Metadata = {
   title: "Contact & réservation",
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-night">Réseaux sociaux</p>
                   <ul className="mt-1 space-y-1">
-                    {site.social.map((s) => (
+                    {socialLinks.map((s) => (
                       <li key={s.name}>
                         <a
                           href={s.href}

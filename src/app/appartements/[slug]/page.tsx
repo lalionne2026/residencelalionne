@@ -65,7 +65,9 @@ export default async function AppartementPage({ params }: PageProps<"/appartemen
                 <ul className="mt-6 space-y-3 border-t border-white/10 pt-6 text-sm text-ivory/75">
                   <li className="flex items-center gap-3">
                     <Icon name="users" className="size-5 text-gold" />
-                    {a.minGuests} personne{a.minGuests > 1 ? "s" : ""} minimum
+                    {a.maxGuests
+                      ? `${a.maxGuests} personnes maximum`
+                      : `${a.minGuests} personne${a.minGuests > 1 ? "s" : ""} minimum`}
                   </li>
                   <li className="flex items-center gap-3">
                     <Icon name="check" className="size-5 text-gold" />

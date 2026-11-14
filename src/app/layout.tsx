@@ -4,7 +4,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
 import { Providers } from "@/components/providers";
-import { site } from "@/content/site";
+import { site, socialLinks } from "@/content/site";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -47,7 +47,7 @@ const jsonLd = {
   image: `${site.url}/images/residence/facade.jpg`,
   telephone: site.phones[0].tel,
   email: site.email,
-  sameAs: site.social.map((s) => s.href),
+  sameAs: socialLinks.map((s) => s.href),
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
