@@ -132,4 +132,58 @@ export const testimonials: {
     author: "Client de la résidence",
     rating: 5,
   },
+  {
+    title: "Un séjour agréable",
+    quote:
+      "J'ai passé un excellent séjour à la Résidence La Lionne. Le cadre est agréable et l'ambiance très chaleureuse. Une belle expérience !",
+    author: "Client satisfait",
+  },
+  {
+    title: "Un accueil chaleureux",
+    quote:
+      "Dès mon arrivée, j'ai été accueilli avec beaucoup de professionnalisme. Le personnel est disponible, souriant et toujours à l'écoute.",
+    author: "Client de la résidence",
+  },
+  {
+    title: "Propreté et confort",
+    quote:
+      "Les chambres sont confortables et bien entretenues. La propreté des lieux est vraiment appréciable. Je recommande vivement cette résidence !",
+    author: "Client satisfait",
+  },
+  {
+    title: "Un cadre reposant",
+    quote:
+      "Un endroit idéal pour se reposer et profiter d'un séjour paisible. J'ai particulièrement apprécié le calme et le confort des installations.",
+    author: "Client de passage",
+  },
+  {
+    title: "Une expérience exceptionnelle",
+    quote:
+      "Tout était à la hauteur de mes attentes. De l'accueil à la qualité des prestations, chaque détail contribue à rendre le séjour agréable.",
+    author: "Client de la résidence",
+  },
+  {
+    title: "Un personnel professionnel",
+    quote:
+      "Une équipe dynamique, respectueuse et très professionnelle. On se sent vraiment considéré et accompagné tout au long du séjour.",
+    author: "Client satisfait",
+  },
+  {
+    title: "Un excellent rapport qualité-prix",
+    quote:
+      "Très bonne expérience dans l'ensemble. Les prestations sont appréciables et le service est à la hauteur. Une adresse que je recommande !",
+    author: "Client de passage",
+  },
+  {
+    title: "Je recommande vivement !",
+    quote:
+      "J'ai beaucoup apprécié mon passage à la Résidence La Lionne. Un cadre accueillant, un bon service et une équipe attentionnée. À refaire !",
+    author: "Client de la résidence",
+  },
+  {
+    title: "Une résidence à découvrir",
+    quote:
+      "Une très belle découverte ! Le séjour s'est déroulé dans de bonnes conditions et j'ai apprécié l'attention portée aux clients. Je reviendrai avec plaisir.",
+    author: "Client satisfait",
+  },
 ];

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import Script from "next/script";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { MobileCta } from "@/components/mobile-cta";
@@ -18,6 +19,8 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
 });
+
+const googleAnalyticsId = "G-4DT8PFE5MV";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -65,6 +68,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+        />
+        <Script id="google-analytics-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${googleAnalyticsId}');
+          `}
+        </Script>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+          strategy="afterInteractive"
         />
         <Providers>
           <Header />

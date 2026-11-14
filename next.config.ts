@@ -2,16 +2,15 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
 
-// Le site ne charge rien de l'extérieur (polices auto-hébergées, pas d'iframe ni de script tiers) :
-// tout est limité au domaine lui-même. 'unsafe-inline' reste nécessaire aux scripts que Next.js
-// insère dans la page tant qu'on n'utilise pas de nonces (qui rendraient chaque page dynamique).
+// Les scripts tiers sont limités à Google Analytics. 'unsafe-inline' reste nécessaire aux scripts
+// que Next.js insère dans la page tant qu'on n'utilise pas de nonces (qui rendraient chaque page dynamique).
 const csp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' blob: data:",
+  "img-src 'self' blob: data: https://www.google-analytics.com",
   "font-src 'self'",
-  `connect-src 'self'${isDev ? " ws:" : ""}`,
+  `connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://region1.analytics.google.com${isDev ? " ws:" : ""}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
