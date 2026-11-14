@@ -121,21 +121,6 @@
   }
 }
 
-/* Défilement horizontal infini (témoignages) : la piste contient la liste en double et glisse de la moitié. */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@utility animate-marquee {
-  animation: marquee var(--marquee-duration, 60s) linear infinite;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-}
-
 /* Animations d'entrée du hero en CSS pur : elles démarrent dès l'affichage de la page,
    sans attendre le chargement du JavaScript (le texte principal s'affiche donc plus vite). */
 @keyframes hero-in {

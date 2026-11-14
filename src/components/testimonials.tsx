@@ -26,11 +26,10 @@ function Stars({ rating }: { rating: number }) {
   );
 }
 
-function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
+function Card({ t }: { t: Testimonial }) {
   return (
     <figure
-      aria-hidden={hidden || undefined}
-      className="relative flex w-[80vw] max-w-sm shrink-0 flex-col rounded-3xl bg-ivory p-7 shadow-[0_24px_60px_-36px_rgba(12,23,36,0.35)] transition-transform duration-500 hover:-translate-y-1 md:w-96 md:p-8"
+      className="relative flex w-[80vw] max-w-sm flex-col rounded-3xl bg-ivory p-7 shadow-[0_24px_60px_-36px_rgba(12,23,36,0.35)] transition-transform duration-500 hover:-translate-y-1 md:w-96 md:p-8"
     >
       <span aria-hidden="true" className="pointer-events-none absolute right-6 top-2 font-display text-8xl leading-none text-gold/15">
         “
@@ -49,34 +48,13 @@ function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
   );
 }
 
-/**
- * Avis clients qui défilent tout seuls à l'horizontale, en boucle (pause au survol).
- * En dessous de 3 avis, ils sont simplement centrés : une boucle répéterait le même avis.
- */
+/** Affiche tous les avis clients en même temps, sans défilement automatique. */
 export function Testimonials() {
-  const count = testimonials.length;
-  if (count === 0) return null;
-
-  if (count < 3) {
-    return (
-      <div className="container-x flex flex-wrap justify-center gap-6">
-        {testimonials.map((t) => (
-          <Card key={t.quote} t={t} />
-        ))}
-      </div>
-    );
-  }
-
   return (
-    <div className="group overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-      <div
-        className="flex w-max animate-marquee gap-6 group-hover:[animation-play-state:paused]"
-        style={{ "--marquee-duration": `${count * 8}s` } as React.CSSProperties}
-      >
-        {[...testimonials, ...testimonials].map((t, i) => (
-          <Card key={i} t={t} hidden={i >= count} />
-        ))}
-      </div>
+    <div className="container-x flex flex-wrap justify-center gap-6">
+      {testimonials.map((t) => (
+        <Card key={t.quote} t={t} />
+      ))}
     </div>
   );
 }

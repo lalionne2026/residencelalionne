@@ -2,7 +2,7 @@
 
 [← Retour au guide](README.md)
 
-Les avis s'affichent sur la page d'accueil, dans la section **« Ils nous font confiance »**. Ils défilent automatiquement de droite à gauche et s'arrêtent quand on passe la souris dessus.
+Les avis s'affichent tous en même temps sur la page d'accueil, dans la section **« Ils nous font confiance »**. Ils ne défilent pas automatiquement.
 
 Ils sont dans le fichier **`src/content/site.ts`** : cherchez `export const testimonials`.
 
@@ -52,4 +52,4 @@ Ils sont dans le fichier **`src/content/site.ts`** : cherchez `export const test
 - ✅ Publiez uniquement de **vrais avis** de clients (messages WhatsApp, Google, Booking…). Les faux avis trompent les clients et sont sanctionnés par Google et Booking.
 - ✅ Demandez l'accord du client avant de publier son nom. Sinon, écrivez simplement `"Client de la résidence"` : une **silhouette anonyme** s'affiche à la place d'une photo.
 - ✅ Corrigez les fautes de frappe, mais **ne changez pas le sens** de l'avis.
-- 💡 Le défilement fonctionne à partir de **3 avis**. En dessous, les avis s'affichent simplement côte à côte.
+- 💡 Les avis sont tous affichés sur la page et passent à la ligne si nécessaire.
