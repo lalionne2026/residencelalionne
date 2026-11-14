@@ -4,28 +4,68 @@ import { Energie } from "@/components/energie";
 import { AppartementCard } from "@/components/appartement-card";
 import { Photo } from "@/components/photo";
 import { SectionHeading } from "@/components/section-heading";
-import { Reveal, RevealGroup, RevealImage, RevealItem } from "@/components/reveal";
+import {
+  Reveal,
+  RevealGroup,
+  RevealImage,
+  RevealItem,
+} from "@/components/reveal";
 import { Icon } from "@/components/icons";
 import { Testimonials } from "@/components/testimonials";
 import { appartements } from "@/content/appartements";
-import { highlights, residencePhotos, rules, services, site, testimonials } from "@/content/site";
+import {
+  highlights,
+  residencePhotos,
+  rules,
+  services,
+  site,
+  testimonials,
+} from "@/content/site";
 import { imageMeta } from "@/lib/images";
 import { whatsappLink } from "@/lib/whatsapp";
 
-const heroImage = { src: "/images/residence/facade.jpg", alt: "Façade de la Résidence La Lionne entourée de verdure" };
+const heroImage = {
+  src: "/images/residence/facade.jpg",
+  alt: "Façade de la Résidence La Lionne entourée de verdure",
+};
 
 const servicePhotos = [
-  { src: "/images/services/01.jpg", alt: "Entretien et nettoyage des logements", label: "Ménage" },
-  { src: "/images/services/02.jpg", alt: "Caméra de vidéosurveillance", label: "Vidéosurveillance" },
-  { src: "/images/services/03.jpg", alt: "Agent de sécurité de la résidence", label: "Sécurité" },
-  { src: "/images/services/04.jpg", alt: "Groupe électrogène de la résidence", label: "Électricité" },
-  { src: "/images/services/05.jpg", alt: "Espace d'accueil de la résidence", label: "Accueil" },
+  {
+    src: "/images/services/01.jpg",
+    alt: "Entretien et nettoyage des logements",
+    label: "Ménage",
+  },
+  {
+    src: "/images/services/02.jpg",
+    alt: "Caméra de vidéosurveillance",
+    label: "Vidéosurveillance",
+  },
+  {
+    src: "/images/services/03.jpg",
+    alt: "Agent de sécurité de la résidence",
+    label: "Sécurité",
+  },
+  {
+    src: "/images/services/04.jpg",
+    alt: "Groupe électrogène de la résidence",
+    label: "Électricité",
+  },
+  {
+    src: "/images/services/05.jpg",
+    alt: "Espace d'accueil de la résidence",
+    label: "Accueil",
+  },
 ];
 
 export default function Home() {
   return (
     <>
-      <Hero image={{ ...heroImage, blurDataURL: imageMeta(heroImage.src)?.blurDataURL }} />
+      <Hero
+        image={{
+          ...heroImage,
+          blurDataURL: imageMeta(heroImage.src)?.blurDataURL,
+        }}
+      />
 
       {/* Chiffres clés */}
       <section className="border-b border-night/10 bg-ivory">
@@ -35,8 +75,12 @@ export default function Home() {
               key={h.label}
               className={`px-4 py-4 text-center ${i > 0 ? "md:border-l md:border-night/10" : ""} ${i % 2 === 1 ? "border-l border-night/10" : ""}`}
             >
-              <p className="font-display text-4xl text-night md:text-5xl">{h.value}</p>
-              <p className="mt-1 text-[0.7rem] uppercase tracking-[0.18em] text-muted">{h.label}</p>
+              <p className="font-display text-4xl text-night md:text-5xl">
+                {h.value}
+              </p>
+              <p className="mt-1 text-[0.7rem] uppercase tracking-[0.18em] text-muted">
+                {h.label}
+              </p>
             </RevealItem>
           ))}
         </RevealGroup>
@@ -50,15 +94,22 @@ export default function Home() {
               eyebrow="Bienvenue"
               title={
                 <>
-                  Un lieu simple, cordial <em className="text-terracotta">et très calme.</em>
+                  <em className="text-terracotta"> La Résidence la Lionne </em>{" "}
+                  est un lieu très calme.
                 </>
               }
               intro="Elle est située dans l’arrondissement numéro un (1) LUMUMBA, quartier KM4 MPEMBA, en République du Congo, dans la ville Océane de Pointe-Noire. Arrêt Boulangerie, à la troisième parcelle du goudron. À six (6) minutes de l’aéroport A. NETO, à huit (8) minutes du centre-ville et à dix (10) minutes de la plage. Elle dispose d'une gamme d'hébergements allant du studio aux appartements."
             />
             <Reveal delay={0.15} className="mt-8">
-              <Link href="/infos-pratiques" className="group inline-flex items-center gap-2 font-semibold text-night">
+              <Link
+                href="/infos-pratiques"
+                className="group inline-flex items-center gap-2 font-semibold text-night"
+              >
                 Infos pratiques
-                <Icon name="arrow" className="size-4 transition-transform group-hover:translate-x-1" />
+                <Icon
+                  name="arrow"
+                  className="size-4 transition-transform group-hover:translate-x-1"
+                />
               </Link>
             </Reveal>
           </div>
@@ -109,7 +160,11 @@ export default function Home() {
 
           <RevealGroup className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-14 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 sm:overflow-visible sm:px-0 lg:grid-cols-3 sm:[&>*:nth-child(n+4)]:hidden">
             {appartements.map((a) => (
-              <RevealItem key={a.slug} as="article" className="w-[82%] shrink-0 snap-start sm:w-auto">
+              <RevealItem
+                key={a.slug}
+                as="article"
+                className="w-[82%] shrink-0 snap-start sm:w-auto"
+              >
                 <AppartementCard appartement={a} />
               </RevealItem>
             ))}
@@ -148,7 +203,9 @@ export default function Home() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-night/80 to-transparent px-4 pb-3 pt-10">
-                  <p className="text-sm font-semibold text-ivory">{photo.label}</p>
+                  <p className="text-sm font-semibold text-ivory">
+                    {photo.label}
+                  </p>
                 </div>
               </RevealImage>
             ))}
@@ -163,7 +220,9 @@ export default function Home() {
                   <Icon name={s.icon} className="size-5 md:size-6" />
                 </span>
                 <h3 className="mt-5 text-xl md:mt-6 md:text-2xl">{s.title}</h3>
-                <p className="mt-2 text-[0.8rem] leading-relaxed text-ivory/65 md:text-sm">{s.text}</p>
+                <p className="mt-2 text-[0.8rem] leading-relaxed text-ivory/65 md:text-sm">
+                  {s.text}
+                </p>
               </RevealItem>
             ))}
           </RevealGroup>
@@ -196,7 +255,10 @@ export default function Home() {
       {/* La résidence en images */}
       <section className="py-20 md:py-32">
         <div className="container-x">
-          <SectionHeading eyebrow="La résidence" title="Entre palmiers et tranquillité" />
+          <SectionHeading
+            eyebrow="La résidence"
+            title="Entre palmiers et tranquillité"
+          />
           <div className="mt-10 grid grid-cols-2 gap-3 md:mt-12 md:grid-cols-4 md:gap-4">
             {residencePhotos.map((p, i) => (
               <RevealImage
@@ -208,7 +270,11 @@ export default function Home() {
                   src={p.src}
                   alt={p.alt}
                   fill
-                  sizes={i === 0 ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
+                  sizes={
+                    i === 0
+                      ? "(min-width: 768px) 50vw, 100vw"
+                      : "(min-width: 768px) 25vw, 50vw"
+                  }
                   className="object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </RevealImage>
@@ -226,11 +292,15 @@ export default function Home() {
               <h2 className="mt-4 text-4xl text-night">Arrivée & départ</h2>
               <div className="mt-8 flex gap-10">
                 <div>
-                  <p className="font-display text-5xl text-night">{site.checkIn}</p>
+                  <p className="font-display text-5xl text-night">
+                    {site.checkIn}
+                  </p>
                   <p className="mt-1 text-sm text-muted">Arrivée à partir de</p>
                 </div>
                 <div>
-                  <p className="font-display text-5xl text-night">{site.checkOut}</p>
+                  <p className="font-display text-5xl text-night">
+                    {site.checkOut}
+                  </p>
                   <p className="mt-1 text-sm text-muted">Départ avant</p>
                 </div>
               </div>
@@ -238,7 +308,10 @@ export default function Home() {
             <ul className="space-y-5">
               {rules.slice(0, 3).map((r) => (
                 <li key={r.title} className="flex gap-4">
-                  <Icon name="check" className="mt-0.5 size-5 shrink-0 text-gold" />
+                  <Icon
+                    name="check"
+                    className="mt-0.5 size-5 shrink-0 text-gold"
+                  />
                   <p className="text-sm leading-relaxed text-ink/80">
                     <strong className="text-night">{r.title}.</strong> {r.text}
                   </p>
@@ -251,18 +324,31 @@ export default function Home() {
 
       {/* Appel à l'action */}
       <section className="relative overflow-hidden bg-night py-24 text-center text-ivory md:py-36">
-        <Photo src="/images/studio/chambre.jpg" alt="" fill sizes="100vw" className="object-cover opacity-25" />
+        <Photo
+          src="/images/studio/chambre.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-25"
+        />
         <div className="container-x relative">
           <Reveal>
             <p className="eyebrow">Réservation</p>
             <h2 className="mx-auto mt-4 max-w-3xl text-4xl leading-tight md:text-6xl">
-              Prêt à poser vos valises <em className="text-gold-light">à La Lionne ?</em>
+              Prêt à poser vos valises{" "}
+              <em className="text-gold-light">à Résidence la Lionne ?</em>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-ivory/70">
-              Écrivez-nous sur WhatsApp avec vos dates et le nombre de personnes : nous vous répondons rapidement.
+              Écrivez-nous sur WhatsApp avec vos dates et le nombre de personnes
+              : nous vous répondons rapidement.
             </p>
             <div className="mt-10 grid justify-center gap-3 sm:flex sm:flex-wrap">
-              <a href={whatsappLink()} target="_blank" rel="noopener" className="btn btn-gold">
+              <a
+                href={whatsappLink()}
+                target="_blank"
+                rel="noopener"
+                className="btn btn-gold"
+              >
                 <Icon name="whatsapp" /> Réserver sur WhatsApp
               </a>
               <Link href="/contact" className="btn btn-ghost">
