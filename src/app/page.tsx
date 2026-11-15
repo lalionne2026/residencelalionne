@@ -94,8 +94,9 @@ export default function Home() {
               eyebrow="Bienvenue"
               title={
                 <>
-                  <em className="text-terracotta"> La Résidence la Lionne </em>{" "}
-                  est un lieu très calme.
+                  <em className="text-terracotta"> La Résidence la Lionne</em>{" "}
+                  est un lieu simple, cordial{" "}
+                  <em className="text-terracotta">et très calme.</em>
                 </>
               }
               intro="Elle est située dans l’arrondissement numéro un (1) LUMUMBA, quartier KM4 MPEMBA, en République du Congo, dans la ville Océane de Pointe-Noire. Arrêt Boulangerie, à la troisième parcelle du goudron. À six (6) minutes de l’aéroport A. NETO, à huit (8) minutes du centre-ville et à dix (10) minutes de la plage. Elle dispose d'une gamme d'hébergements allant du studio aux appartements."
@@ -336,7 +337,7 @@ export default function Home() {
             <p className="eyebrow">Réservation</p>
             <h2 className="mx-auto mt-4 max-w-3xl text-4xl leading-tight md:text-6xl">
               Prêt à poser vos valises{" "}
-              <em className="text-gold-light">à Résidence la Lionne ?</em>
+              <em className="text-gold-light">à La Résidence la Lionne ?</em>
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-ivory/70">
               Écrivez-nous sur WhatsApp avec vos dates et le nombre de personnes

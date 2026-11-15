@@ -56,14 +56,14 @@ export function Testimonials() {
   return (
     <div className="group overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
       <div
-        className="flex w-max animate-marquee gap-3 group-hover:[animation-play-state:paused]"
+        className="flex w-max animate-marquee group-hover:[animation-play-state:paused]"
         style={{ "--marquee-duration": `${count * 8}s` } as React.CSSProperties}
       >
         {[0, 1].map((copy) => (
           <div
             key={copy}
             aria-hidden={copy === 1 || undefined}
-            className="flex min-w-full shrink-0 gap-3"
+            className="flex shrink-0 gap-3 pr-3"
           >
             {testimonials.map((t) => (
               <Card key={t.quote} t={t} />
