@@ -17,7 +17,7 @@ export function AppartementCard({ appartement, preload = false }: { appartement:
         />
         <div className="absolute inset-0 bg-linear-to-t from-night/70 via-night/0 to-night/0 transition-opacity duration-500 group-hover:opacity-90" />
         <span className="absolute left-4 top-4 rounded-full bg-ivory/90 px-3 py-1 text-xs font-semibold text-night backdrop-blur">
-          {appartement.type}
+          {appartement.type.replace(/\s*\([^)]*\)\s*$/, "")}
         </span>
         <p className="absolute bottom-4 left-4 text-ivory">
           <span className="font-display text-2xl">{formatPrice(appartement.price)}</span>

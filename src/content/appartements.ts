@@ -1,7 +1,7 @@
 export type Appartement = {
   slug: string;
   name: string;
-  type: "3 chambres" | "2 chambres" | "Studio";
+  type: string;
   /** Prix par nuit en FCFA. `null` = prix sur demande. */
   price: number | null;
   minGuests: number;
@@ -18,21 +18,27 @@ const commonFeatures = [
   "Lits deux places (1,60 m)",
   "Matelas médicaux",
   "Wi-Fi",
-  "Écran plasma 55 pouces",
+  "Écran plasma (55) pouces",
   "Linge de maison fourni",
+  "Chambre parentale avec coiffeuse",
 ];
 
 export const appartements: Appartement[] = [
   {
     slug: "appartement-1",
     name: "Appartement N°1",
-    type: "3 chambres",
+    type: "3 chambres (6)",
     price: 55000,
     minGuests: 3,
     maxGuests: 6,
     summary:
       "Un grand salon lumineux, une salle à manger pour six et trois chambres spacieuses : idéal pour les familles et les séjours prolongés.",
-    features: [...commonFeatures, "Douches avec cabines uniquement"],
+    features: [
+      ...commonFeatures,
+      "(2) chambres avec cabines de douche",
+      "(1) chambre avec jacuzzi",
+      "Balcon",
+    ],
     cover: "/images/appartement-1/01.jpg",
     gallery: [
       { src: "/images/appartement-1/01.jpg", alt: "Salon avec canapés violets et coin repas" },
@@ -48,16 +54,16 @@ export const appartements: Appartement[] = [
   {
     slug: "appartement-2",
     name: "Appartement N°2",
-    type: "3 chambres",
+    type: "3 chambres (6)",
     price: 55000,
     minGuests: 3,
     maxGuests: 6,
     summary:
       "Salon élégant aux tons rouge et noir, trois chambres climatisées et une cuisine complète pour vivre comme à la maison.",
-    features: [...commonFeatures, "1 douche avec jacuzzi", "2 cabines de douche"],
-    cover: "/images/nouveau/appartement2.jpeg",
+    features: [...commonFeatures, "(1) douche avec jacuzzi", "(2) cabines de douche", "Balcon"],
+    cover: "/images/nouveau/appartement2.jpg",
     gallery: [
-      { src: "/images/nouveau/appartement2.jpeg", alt: "Salon rouge et noir de l'appartement N°2" },
+      { src: "/images/nouveau/appartement2.jpg", alt: "Salon rouge et noir de l'appartement N°2" },
       { src: "/images/appartement-2/01.jpg", alt: "Salle de bain avec jacuzzi" },
       { src: "/images/appartement-2/04.jpg", alt: "Cuisine équipée" },
       { src: "/images/appartement-2/05.jpg", alt: "Chambre avec lit double" },
@@ -68,12 +74,13 @@ export const appartements: Appartement[] = [
   {
     slug: "appartement-3",
     name: "Appartement N°3",
-    type: "2 chambres",
+    type: "2 chambres (4)",
     price: 45000,
     minGuests: 2,
+    maxGuests: 4,
     summary:
       "Un salon chaleureux et deux chambres confortables, parfait pour un couple, des collègues en mission ou une petite famille.",
-    features: [...commonFeatures, "1 salle de bain avec jacuzzi", "1 cabine de douche"],
+    features: [...commonFeatures, "(1) salle de bain avec jacuzzi", "(1) cabine de douche", "Véranda"],
     cover: "/images/appartement-3/01.jpg",
     gallery: [
       { src: "/images/appartement-3/01.jpg", alt: "Salon avec canapés rouges" },
@@ -84,12 +91,13 @@ export const appartements: Appartement[] = [
   {
     slug: "appartement-4",
     name: "Appartement N°4",
-    type: "2 chambres",
+    type: "2 chambres (4)",
     price: 45000,
     minGuests: 2,
+    maxGuests: 4,
     summary:
       "Salon aux couleurs vives, deux chambres reposantes et une salle de bain moderne : le confort d'une résidence, l'espace en plus.",
-    features: [...commonFeatures, "1 salle de bain avec jacuzzi", "1 cabine de douche"],
+    features: [...commonFeatures, "(1) salle de bain avec jacuzzi", "(1) cabine de douche", "Véranda"],
     cover: "/images/appartement-4/01.jpg",
     gallery: [
       { src: "/images/appartement-4/01.jpg", alt: "Salon avec canapés bleu canard" },
@@ -103,9 +111,10 @@ export const appartements: Appartement[] = [
   {
     slug: "studio",
     name: "Studio",
-    type: "Studio",
+    type: "Studio (1)",
     price: 25000,
     minGuests: 1,
+    maxGuests: 1,
     summary:
       "Un studio moderne avec jacuzzi, balcon offrant une belle vue, coiffeuse et petit réfrigérateur : le confort idéal pour un voyageur seul ou un court séjour.",
     features: [
@@ -115,7 +124,7 @@ export const appartements: Appartement[] = [
       "Salle de bain privative avec jacuzzi",
       "Balcon avec belle vue",
       "Wi-Fi",
-      "Écran plasma 55 pouces",
+      "Écran plasma (55) pouces",
       "Coiffeuse",
       "Petit réfrigérateur",
     ],

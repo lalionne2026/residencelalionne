@@ -10,7 +10,6 @@ export function Footer() {
       <div className="container-x grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Brand size="lg" />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed">{site.description}</p>
           <a href={whatsappLink()} target="_blank" rel="noopener" className="btn btn-gold mt-7">
             <Icon name="whatsapp" /> Réserver sur WhatsApp
           </a>

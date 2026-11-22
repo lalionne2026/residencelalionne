@@ -29,32 +29,15 @@ const heroImage = {
   alt: "Façade de la Résidence La Lionne entourée de verdure",
 };
 
-const servicePhotos = [
-  {
-    src: "/images/services/01.jpg",
-    alt: "Entretien et nettoyage des logements",
-    label: "Ménage",
-  },
-  {
-    src: "/images/services/02.jpg",
-    alt: "Caméra de vidéosurveillance",
-    label: "Vidéosurveillance",
-  },
-  {
-    src: "/images/services/03.jpg",
-    alt: "Agent de sécurité de la résidence",
-    label: "Sécurité",
-  },
-  {
-    src: "/images/services/04.jpg",
-    alt: "Groupe électrogène de la résidence",
-    label: "Électricité",
-  },
-  {
-    src: "/images/services/05.jpg",
-    alt: "Espace d'accueil de la résidence",
-    label: "Accueil",
-  },
+const topServicePhotos = [
+  { title: "Ménage & linge", src: "/images/services/01.jpg", alt: "Entretien et nettoyage des logements" },
+  { title: "Sécurité 24h/24", src: "/images/services/02.jpg", alt: "Caméra de vidéosurveillance de la résidence" },
+  { title: "Gardiennage", src: "/images/services/03.jpg", alt: "Agent de gardiennage de la résidence" },
+  { title: "Électricité continue", src: "/images/services/04.jpg", alt: "Groupe électrogène de la résidence" },
+  { title: "Wi-Fi & TV", src: "/images/services/05.jpg", alt: "Espace d'accueil de la résidence" },
+  { title: "Parking privé", src: "/images/residence/cour-parking.jpg", alt: "Cour pavée et parking fermé de la résidence" },
+  { title: "Terrasse ombragée", src: "/images/residence/terrasse.jpg", alt: "Terrasse ombragée de la résidence" },
+  { title: "Panneaux solaires", src: "/images/residence/panneaux-solaires.jpg", alt: "Panneaux solaires de la résidence" },
 ];
 
 export default function Home() {
@@ -159,7 +142,7 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <RevealGroup className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-14 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 sm:overflow-visible sm:px-0 lg:grid-cols-3 sm:[&>*:nth-child(n+4)]:hidden">
+          <RevealGroup className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pb-2 sm:mx-0 sm:mt-14 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-x-8 sm:gap-y-14 sm:overflow-visible sm:px-0 lg:grid-cols-3">
             {appartements.map((a) => (
               <RevealItem
                 key={a.slug}
@@ -189,35 +172,32 @@ export default function Home() {
             title="Tout pour un séjour serein"
             intro="Des services pensés pour les familles, les professionnels en mission et la diaspora de passage au pays."
           />
-          <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-5">
-            {servicePhotos.map((photo, i) => (
-              <RevealImage
-                key={photo.src}
-                delay={i * 0.06}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl"
+          <RevealGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {topServicePhotos.map((s) => (
+              <RevealItem
+                key={s.title}
+                className="group"
               >
-                <Photo
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(min-width: 1024px) 20vw, (min-width: 768px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-night/80 to-transparent px-4 pb-3 pt-10">
-                  <p className="text-sm font-semibold text-ivory">
-                    {photo.label}
-                  </p>
-                </div>
-              </RevealImage>
+                <h3 className="mb-4 text-center text-xl md:text-2xl">{s.title}</h3>
+                <RevealImage className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+                  <Photo
+                    src={s.src}
+                    alt={s.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </RevealImage>
+              </RevealItem>
             ))}
-          </div>
-          <RevealGroup className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-white/10 md:mt-16 lg:grid-cols-3">
+          </RevealGroup>
+          <RevealGroup className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-3xl bg-white/10 md:mt-10 lg:grid-cols-3">
             {services.map((s) => (
               <RevealItem
                 key={s.title}
-                className="group bg-night p-5 transition-colors duration-500 hover:bg-night-soft sm:p-8 md:p-10"
+                className="group bg-night p-5 text-center transition-colors duration-500 hover:bg-night-soft sm:p-8 md:p-10"
               >
-                <span className="grid size-11 place-items-center rounded-full border border-gold/40 text-gold transition-all duration-500 group-hover:scale-110 group-hover:bg-gold group-hover:text-night md:size-12">
+                <span className="mx-auto grid size-11 place-items-center rounded-full border border-gold/40 text-gold transition-all duration-500 group-hover:scale-110 group-hover:bg-gold group-hover:text-night md:size-12">
                   <Icon name={s.icon} className="size-5 md:size-6" />
                 </span>
                 <h3 className="mt-5 text-xl md:mt-6 md:text-2xl">{s.title}</h3>
@@ -284,6 +264,52 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Modalités de paiement */}
+      <section className="pb-20 md:pb-32">
+        <div className="container-x">
+          <Reveal className="grid items-center gap-10 rounded-3xl bg-sand/70 p-7 md:grid-cols-[0.9fr_1.1fr] md:p-12">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Photo
+                src="/images/payments/argent.jpg"
+                alt="Modalités de paiement de la résidence"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div>
+              <p className="eyebrow">Informations importantes</p>
+              <h2 className="mt-4 text-3xl text-night md:text-4xl">
+                Modalités de paiement pour les courts et longs séjours
+              </h2>
+              <div className="mt-6 space-y-4 text-sm leading-relaxed text-ink/80 md:text-base">
+                <p>
+                  Pour les courts séjours, une caution est exigée obligatoirement
+                  d&apos;une somme de 25 000 FCFA, remboursable à la veille de la sortie.
+                </p>
+                <p>
+                  Pour les longs séjours, une caution est exigée obligatoirement
+                  d&apos;une somme de 50 000 FCFA, remboursable à la veille de la sortie
+                  après l&apos;état des lieux.
+                </p>
+                <p>
+                  S&apos;il n&apos;y a pas eu de dégradation dans l&apos;appartement
+                  (fissure, cassure, etc.), la caution est remboursée.
+                </p>
+                <p>
+                  <strong className="text-night">NB :</strong> Le paiement se fait par jour.
+                </p>
+                <p>
+                  En conséquence du non-respect du règlement intérieur de la résidence,
+                  le client sera invité, ainsi que toutes les personnes qui partagent
+                  son séjour, à quitter la résidence sans pouvoir exiger aucun remboursement.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Horaires */}
       <section className="pb-20 md:pb-32">
         <div className="container-x">
@@ -302,7 +328,7 @@ export default function Home() {
                   <p className="font-display text-5xl text-night">
                     {site.checkOut}
                   </p>
-                  <p className="mt-1 text-sm text-muted">Départ avant</p>
+                  <p className="mt-1 text-sm text-muted">Heure de départ</p>
                 </div>
               </div>
             </div>

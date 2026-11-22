@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact & réservation"
         title="Parlons de votre séjour"
-        intro="Nous sommes à votre disposition pour toutes vos questions sur nos appartements."
+        intro="Nous sommes à votre disposition pour toutes vos questions concernant nos appartements."
       />
       <section className="py-20 md:py-28">
         <div className="container-x grid gap-14 lg:grid-cols-[1fr_1.2fr]">

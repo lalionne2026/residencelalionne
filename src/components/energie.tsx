@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { animate, motion, useInView, useScroll, useTransform } from "motion/react";
+import { animate, motion, useInView } from "motion/react";
 import { Icon } from "@/components/icons";
 import { Photo } from "@/components/photo";
 import { RevealImage, RevealGroup, RevealItem } from "@/components/reveal";
@@ -16,7 +16,7 @@ const panels = [
     icon: "bolt",
     label: "Énergie solaire",
     title: "Jamais dans le noir",
-    text: "Des panneaux solaires sur le toit, relayés par un groupe électrogène : climatisation, lumière et Wi-Fi continuent de fonctionner pendant les coupures.",
+    text: "Les panneaux solaires installés sur le toit, associés à un groupe électrogène, assurent le fonctionnement continu de la climatisation, de l'éclairage et du Wi-Fi pendant les coupures.",
     live: true,
   },
   {
@@ -25,7 +25,7 @@ const panels = [
     icon: "car",
     label: "Parking privé",
     title: "Votre véhicule à l'abri",
-    text: "Une cour pavée fermée par un portail, sous gardiennage 24h/24 : vous stationnez dans l'enceinte de la résidence.",
+    text: "Une cour pavée, fermée par un portail et surveillée 24 h/24, vous permet de stationner votre véhicule en toute sécurité dans l'enceinte de la résidence.",
     live: false,
   },
 ] as const;
@@ -59,16 +59,32 @@ function Counter({ value, suffix }: { value: number; suffix: string }) {
   );
 }
 
-/** Carte photo : l'image glisse plus lentement que la page (parallaxe) et zoome au survol. */
+/** Carte d'information : le texte précède l'image. */
 function Panel({ panel, index }: { panel: (typeof panels)[number]; index: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-12%", "12%"]);
-
   return (
-    <div ref={ref} className={index === 1 ? "md:mt-24" : ""}>
-      <RevealImage delay={index * 0.15} className="group relative aspect-4/5 rounded-3xl">
-        <motion.div className="absolute -inset-y-[14%] inset-x-0" style={{ y }}>
+    <div className={index === 1 ? "md:mt-24" : ""}>
+      <div className="mb-5 rounded-3xl border border-night/10 bg-white p-6 md:p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10% 0px" }}
+          transition={{ duration: 0.9, delay: 0.15 + index * 0.15, ease }}
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-gold/50 px-3 py-1.5 text-[0.7rem] uppercase tracking-[0.18em] text-terracotta">
+            <Icon name={panel.icon} className="size-3.5" />
+            {panel.label}
+            {panel.live && (
+              <span className="relative ml-1 flex size-2" aria-hidden="true">
+                <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
+              </span>
+            )}
+          </span>
+          <h3 className="mt-4 text-3xl text-night md:text-4xl">{panel.title}</h3>
+          <p className="mt-3 max-w-md text-sm leading-relaxed text-ink/75 md:text-base">{panel.text}</p>
+        </motion.div>
+      </div>
+      <RevealImage delay={0.25 + index * 0.15} className="group relative aspect-4/5 overflow-hidden rounded-3xl">
           <Photo
             src={panel.src}
             alt={panel.alt}
@@ -76,30 +92,6 @@ function Panel({ panel, index }: { panel: (typeof panels)[number]; index: number
             sizes="(min-width: 768px) 45vw, 100vw"
             className="object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-105"
           />
-        </motion.div>
-        <div className="absolute inset-0 bg-linear-to-t from-night via-night/40 to-transparent" />
-
-        <div className="absolute inset-x-0 bottom-0 p-6 text-ivory md:p-10">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
-            transition={{ duration: 0.9, delay: 0.5 + index * 0.15, ease }}
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-night/50 px-3 py-1.5 text-[0.7rem] uppercase tracking-[0.18em] text-gold-light backdrop-blur-sm">
-              <Icon name={panel.icon} className="size-3.5" />
-              {panel.label}
-              {panel.live && (
-                <span className="relative ml-1 flex size-2" aria-hidden="true">
-                  <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex size-2 rounded-full bg-emerald-400" />
-                </span>
-              )}
-            </span>
-            <h3 className="mt-4 text-3xl md:text-4xl">{panel.title}</h3>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-ivory/75 md:text-base">{panel.text}</p>
-          </motion.div>
-        </div>
       </RevealImage>
     </div>
   );
@@ -109,7 +101,13 @@ export function Energie() {
   return (
     <section className="overflow-hidden py-20 md:py-32">
       <div className="container-x">
-        <div className="grid items-end gap-10 md:grid-cols-[1.2fr_1fr]">
+        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 md:gap-10">
+          {panels.map((p, i) => (
+            <Panel key={p.src} panel={p} index={i} />
+          ))}
+        </div>
+
+        <div className="mt-12 grid items-end gap-10 md:mt-16 md:grid-cols-[1.2fr_1fr]">
           <SectionHeading
             eyebrow="Énergie & sécurité"
             title={
@@ -129,12 +127,6 @@ export function Energie() {
               </RevealItem>
             ))}
           </RevealGroup>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 md:gap-10">
-          {panels.map((p, i) => (
-            <Panel key={p.src} panel={p} index={i} />
-          ))}
         </div>
       </div>
     </section>

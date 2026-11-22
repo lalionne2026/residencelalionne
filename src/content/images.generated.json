@@ -144,10 +144,20 @@
     "height": 200,
     "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQAgCdASoQABAAA4BaJZQCdAYs3q/qkBCAkIAA/vhWYZ4+i9+vv2zS4MY2wB5iY6DHHsWRMEyQlordneKg8LpDpO6zVlvFmYngmfsJhkYj4AAA"
   },
+  "/images/nouveau/appartement2.jpg": {
+    "width": 960,
+    "height": 540,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAQCdASoQAAkAA4BaJQBOgBmSIbKwAAD+sg6NLhz+aHzEuQHbv2ENr5xkHmQ7gFdwC+SjHWb7fOwivel9XuFyFg/OWTY33CHXfZg1f3gxC5q+AERsZyeP1iz66MilgAA="
+  },
+  "/images/payments/argent.jpg": {
+    "width": 2000,
+    "height": 1123,
+    "blurDataURL": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAQCdASoQAAkAA4BaJYgCdADwYF+AAP3jrVsg8MXOsY2S5CdLGmi5osF4NgMwufpC2vgrcyX9ix53zPdXu5eNZk0OkPEW4aAAAA=="
+  },
   "/images/residence/accueil-bar.jpg": {
     "width": 1086,
     "height": 1448,
-    "blurDataURL": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACxDCXCdLarbQgCpd+7kyQA/ulUIFGiRwbdBl7KI+H1sWPmyahTkTK7wVZjxIEYP1t2eRhuvyjIC7JF47iyjFiZO6E+1dlN1guPmgP8BgM+AomtoWn6s4b2LUIJ8nwidRAp/0c8kEsRzKuikJMEn/KzJ3HahP9361KJ4UwAAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAABQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACxDIjCdLaqwgWlG1jXZUngAP7pVCBRokcG3QZeyiPh9bFj5smoU5Eyu8FWY8R5B90VsfUIvEetEhqXi688Y2F9/+dVMxgDHcYt08Hod4asGr//0Ql44BW5V5giPkGn69AuFC14jkSaI5mXH6TA1f+jD7bzV1f4NcfIDASgAA=="
   },
   "/images/residence/accueil-salon.jpg": {
     "width": 853,
@@ -157,17 +167,17 @@
   "/images/residence/accueil.jpg": {
     "width": 960,
     "height": 1280,
-    "blurDataURL": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACdL1yB0MP8PfcJAkQen9wA/o6542BOjfin2Yl9T3JAYA0DtR7AKzuOXV8Xn+3nixaEJ8Gg5EpL9hoCRYhFcA+O9CBpzyIfiTm5/Awtl9KP5wsvua2XyMagAyiQ1sNE7cSjLj3gAAAA"
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACdMoBnAByfRyUQm7RPV1qKwAD+jrnjYE6N+KfZiXup7qn9jwTVmdcRlskuhfpnFh8tLOnoV9P9Je2a4ISFVJIHSUYv/bNL39j1+shppNfohQfHs9k5Nv+JN0deOZBPo5kwUT5wAA=="
   },
   "/images/residence/balcon.jpg": {
     "width": 1086,
     "height": 1448,
-    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaACdAdwAhF7k0JsEnB4AAP7FmzB3AWrLzZ3/wjD3B+sUyvkGM3BNlpyuRqw1ZgDWtCO9CHeSMiQ6pkXPWr4Nf4QBJEMEKVZSO7ERvtMoLU7fG6Y1rpS4FXXjBUtlpaOu6z5rRKapO2R17OxZPFtGctyEld9N70AAAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaACdAdwAhF7k0JsEnB4AAP7FmzB3AWsIKiGr8Iw9wfrFMr5BjLLkfWL1hhG2gy1X1sTb3YDY8yjzxyR6tbdqxMpdmdlByfzPPl8+NBD37HfKtSuPVmVhsiuedgldG7j1FPtkLsexvk5Px95U2kiEzaR0cFqsIuAAAA=="
   },
   "/images/residence/cour-parking.jpg": {
     "width": 960,
     "height": 1280,
-    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAACwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaACdMoABEfLDDNf5wAD8yoOVRBuoEfuPnpoDs6aTfMLWZSy0eYPN7LQlHBv8r3nbwv3oRW2ryr2nGc23o6evN5wgFUiUPhtZL0RRSATbj1nSQNLTaSHbf5WgGpW4McDVFUX7Dvcm/xnKAlEsAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JaACdMoABfcs9XfjqRAAA/MqDlUQbqBH7j56aA7Omk3zC1mUstHmDze36Dj+QkpKVTYOLFUQsk/X1DjW4yCkkE2AFxCdTWoQLlD5hqx33jnpuSUiiu/LwQ/61/8euex9x+/fv+O6/jOUBKJYAAA=="
   },
   "/images/residence/enseigne.jpg": {
     "width": 1920,
@@ -182,12 +192,12 @@
   "/images/residence/panneaux-solaires.jpg": {
     "width": 1280,
     "height": 960,
-    "blurDataURL": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAQCdASoQAAwAA4BaJbACdH8ACVchoAD9/G+dL0MX1RDjZbLw40br9I2pgDT383YJ10nVFEmkFDyfPya59+EJ2QTxlNa0yQP15H6e+jN1tCVZGsoRRv7Xi5a2zgAA"
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAQCdASoQAAwAA4BaJbACdH8ACVQCEAD9/Gy6A3rsi03MGJ41q7QjnnzCSqVire40cj5JLWsEghcEhVzfCF9SVvSeFSZa2MFaC2uAse3E9F1ezXayhFG/teLlrbOAAAA="
   },
   "/images/residence/terrasse-balancelle.jpg": {
     "width": 1086,
     "height": 1448,
-    "blurDataURL": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACdDiSQKQT3RLnQs07Hsn8AAPiph9uQ1y61auTasH8vkYzTDdJmgNwQCxqMqeHTxx+28QgGMHqOXSbIr6SJGG+qPZm+031Vud0bD690bX07sxCTInKfV0E8XqVF5ihDfnKJWXp/BJpCLwAAAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JbACdDiSQKQT3FhynXYghNAAA+KmH25DXLrVq5Nqwfy+RjNMN0maA3BAHHOZsJmgL7O6JHtsPrUMOLAZvN2IGFqXWm7+flksfZSVIiyWUErhj/Y35GsFb6OQaGnJ+jKFTEXUjqN8bfVwkapJjgrgAAAA="
   },
   "/images/residence/terrasse.jpg": {
     "width": 1920,
@@ -222,7 +232,7 @@
   "/images/studio/chambre.jpg": {
     "width": 1542,
     "height": 1020,
-    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAQCdASoQAAsAA4BaJbACdAEKaA9gpsAA/vCHT5/uwgmHTbE7KEiXYa3/8KxhxVSjvSfW3806bdDcfm8ad1/vHwCg34uEpV/G8bwID+JTG8AH0+3ncj7PYVBYwrGCwQQnPp1dqYt5k90jpYAAAA=="
+    "blurDataURL": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADwAQCdASoQAAsAA4BaJbACdAEKaA9gpsAA/vCHT5/uwgmHTbE7KEiXYa3/8KxhxVSjvSfW3806bdDcfm8ad1/vHwCg34uEpV/G8bwID+JTG8AH0+3ncjgQD0LuPG9qdATaVUM2bvpMyKDAx4AAAA=="
   },
   "/images/studio/salle-de-bain.jpg": {
     "width": 900,

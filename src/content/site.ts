@@ -47,31 +47,43 @@ export const services = [
     icon: "shield",
     title: "Sécurité 24h/24",
     text: "Gardiennage permanent et vidéosurveillance de la résidence.",
+    photo: "/images/services/02.jpg",
+    photoAlt: "Caméra de vidéosurveillance de la résidence",
   },
   {
     icon: "bolt",
     title: "Électricité continue",
     text: "Groupe électrogène : jamais sans courant ni climatisation.",
+    photo: "/images/services/04.jpg",
+    photoAlt: "Groupe électrogène de la résidence",
   },
   {
     icon: "sparkle",
     title: "Ménage & linge",
     text: "Appartements nettoyés et préparés avant chaque arrivée.",
+    photo: "/images/services/01.jpg",
+    photoAlt: "Entretien et nettoyage des logements",
   },
   {
     icon: "wifi",
     title: "Wi-Fi & TV",
     text: "Internet et télévision écran plat dans chaque logement.",
+    photo: "/images/services/05.jpg",
+    photoAlt: "Espace d'accueil de la résidence",
   },
   {
     icon: "car",
     title: "Parking privé",
     text: "Stationnement dans l'enceinte sécurisée de la résidence.",
+    photo: "/images/residence/cour-parking.jpg",
+    photoAlt: "Cour pavée et parking fermé de la résidence",
   },
   {
     icon: "leaf",
     title: "Terrasse ombragée",
     text: "Un espace calme pour se détendre entre palmiers et verdure.",
+    photo: "/images/residence/terrasse.jpg",
+    photoAlt: "Terrasse ombragée de la résidence",
   },
 ] as const;
 
@@ -104,15 +116,19 @@ export const rules = [
   },
   {
     title: "Départ",
-    text: "Avant 12h00, afin de laisser à l'équipe de ménage le temps de préparer l'appartement pour les clients suivants.",
+    text: "À 12h00, afin de laisser à l'équipe de ménage le temps de préparer l'appartement pour les clients suivants.",
   },
   {
     title: "Occupation",
-    text: "Chacun des appartements de 3 chambres accueille 6 personnes maximum. Appartement 2 chambres : 2 personnes minimum. Studio : 1 personne minimum.",
+    text: "Les appartements de 3 chambres accueillent (6) personnes maximum. Les appartements de 2 chambres accueillent (4) personnes maximum. Le studio accueille (1) personne.",
   },
   {
     title: "Dégradations",
     text: "Toute casse ou fissure constatée lors de l'état des lieux est à la charge du client.",
+  },
+  {
+    title: "Respect du règlement",
+    text: "En conséquence du non-respect du règlement intérieur de la résidence, le client et toutes les personnes qui partagent son séjour seront invités à quitter la résidence sans aucun remboursement.",
   },
 ] as const;
 
