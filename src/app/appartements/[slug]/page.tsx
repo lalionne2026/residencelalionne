@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppartementCard } from "@/components/appartement-card";
@@ -26,7 +27,11 @@ export async function generateMetadata({ params }: PageProps<"/appartements/[slu
   };
 }
 
-export default async function AppartementPage({ params }: PageProps<"/appartements/[slug]">) {
+async function AppartementContent({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const a = getAppartement(slug);
   if (!a) notFound();
@@ -102,5 +107,20 @@ export default async function AppartementPage({ params }: PageProps<"/appartemen
         </div>
       </section>
     </>
+  );
+}
+
+export default function AppartementPage({ params }: PageProps<"/appartements/[slug]">) {
+  return (
+    <Suspense
+      fallback={
+        <div className="container-x py-24">
+          <div className="h-8 w-48 animate-pulse rounded bg-sand" />
+          <div className="mt-5 h-14 w-full max-w-2xl animate-pulse rounded-2xl bg-sand" />
+        </div>
+      }
+    >
+      <AppartementContent params={params} />
+    </Suspense>
   );
 }

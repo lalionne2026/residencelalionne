@@ -28,7 +28,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold text-night">Adresse</p>
                   <p className="text-muted">
-                    {site.address.street}, {site.address.country}
+                    {site.address.street}, {site.address.town}, {site.address.country}
                   </p>
                 </div>
               </li>

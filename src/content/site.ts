@@ -1,6 +1,4 @@
 // Informations générales de la résidence.
-// TODO(propriétaire) : confirmer la ville exacte et les liens réseaux sociaux.
-
 export const site = {
   name: "La Résidence La Lionne",
   shortName: "La Lionne",
@@ -9,17 +7,22 @@ export const site = {
   description:
     "Appartements meublés haut standing de 2 et 3 chambres et studios modernes : jacuzzi selon le logement, cabines de douche, climatisation individuelle, Wi-Fi, sécurité 24h/24 et groupe électrogène.",
   address: {
-    street: "Km 4, direction Pemba",
+    street: "Arrondissement Lumumba, quartier Km 4 Mpemba",
     country: "République du Congo",
+    town: "Pointe-Noire",
   },
-  phones: [
-    { label: "06 139 78 87", tel: "+242061397887" },
+  phones: [{ label: "06 139 78 87", tel: "+242061397887" }],
+  footerPhones: [
+    { label: "06 562 46 70", tel: "+242065624670" },
+    { label: "+1 802 391 7806", tel: "+18023917806" },
+    { label: "05 506 56 14", tel: "+242055065614" },
   ],
   whatsapp: "242061397887",
   email: "lalionne2026@gmail.com",
   social: {
     youtube: "https://www.youtube.com/@residencelalionne",
-    facebook: null as string | null,
+    facebook: "https://www.facebook.com/share/v/19zgHJZx6r/",
+    tiktok: "https://www.tiktok.com/@lalionne4256",
     instagram: null as string | null,
   },
   checkIn: "13h00",
@@ -27,13 +30,15 @@ export const site = {
   currency: "FCFA",
 } as const;
 
-export const socialLinks = [
+export const socialLinks: {
+  name: "facebook" | "tiktok" | "youtube";
+  label: string;
+  href: string;
+}[] = [
   { name: "facebook", label: "Facebook", href: site.social.facebook },
+  { name: "tiktok", label: "TikTok", href: site.social.tiktok },
   { name: "youtube", label: "YouTube", href: site.social.youtube },
-].filter(
-  (social): social is { name: "facebook" | "youtube"; label: string; href: string } =>
-    social.href !== null,
-);
+];
 
 export const nav = [
   { href: "/", label: "Accueil" },
@@ -91,9 +96,18 @@ export type ServiceIcon = (typeof services)[number]["icon"];
 
 // Photos de la résidence (extérieur et parties communes).
 export const residencePhotos = [
-  { src: "/images/residence/facade.jpg", alt: "Façade de la Résidence La Lionne" },
-  { src: "/images/residence/cour-parking.jpg", alt: "Cour et parking de la résidence" },
-  { src: "/images/residence/terrasse.jpg", alt: "Terrasse ombragée de la résidence" },
+  {
+    src: "/images/residence/facade.jpg",
+    alt: "Façade de la Résidence La Lionne",
+  },
+  {
+    src: "/images/residence/cour-parking.jpg",
+    alt: "Cour et parking de la résidence",
+  },
+  {
+    src: "/images/residence/terrasse.jpg",
+    alt: "Terrasse ombragée de la résidence",
+  },
   { src: "/images/residence/enseigne.jpg", alt: "Enseigne de la résidence" },
 ] as const;
 
@@ -120,7 +134,7 @@ export const rules = [
   },
   {
     title: "Occupation",
-    text: "Les appartements de 3 chambres accueillent (6) personnes maximum. Les appartements de 2 chambres accueillent (4) personnes maximum. Le studio accueille (1) personne.",
+    text: "Les appartements de 3 chambres accueillent (6) personnes maximum. Les appartements de 2 chambres accueillent (4) personnes maximum. Le studio accueille jusqu'à (2) personnes.",
   },
   {
     title: "Dégradations",

@@ -7,7 +7,7 @@ import { appartements } from "@/content/appartements";
 export const metadata: Metadata = {
   title: "Nos appartements",
   description:
-    "Appartements meublés de 3 chambres (55 000 FCFA/nuit), de 2 chambres (45 000 FCFA/nuit) et studios modernes à la Résidence La Lionne.",
+    "Appartements meublés de 3 chambres (55 000 FCFA/nuit), de 2 chambres (45 000 FCFA/nuit) et studios modernes (25 000 FCFA/nuit) à la Résidence La Lionne.",
 };
 
 export default function AppartementsPage() {

@@ -54,11 +54,12 @@ const jsonLd = {
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.street,
+    addressLocality: site.address.town,
     addressCountry: "CG",
   },
   checkinTime: "13:00",
   checkoutTime: "12:00",
-  priceRange: "45 000 – 55 000 FCFA / nuit",
+  priceRange: "25 000 – 55 000 FCFA / nuit",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
