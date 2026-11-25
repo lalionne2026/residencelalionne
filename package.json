@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "images": "node scripts/optimize-images.mjs",
-    "screenshot": "node scripts/screenshot.mjs"
+    "screenshot": "node scripts/screenshot.mjs",
+    "test:site": "node scripts/audit-site.mjs"
   },
   "dependencies": {
     "lenis": "^1.3.26",

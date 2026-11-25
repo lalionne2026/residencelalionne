@@ -64,6 +64,8 @@ Build de production en local, iPhone 13 émulé, réseau 4G lente (1,6 Mb/s, 150
 - Polices auto-hébergées via `next/font` (aucune requête vers Google).
 - Animations du haut de page en CSS (voir [Architecture](architecture.md#animations--deux-règles)).
 - Cache d'un an pour les images optimisées (`minimumCacheTTL`).
+- Cache immutable d'un an pour les fichiers Next.js versionnés.
+- Audit navigateur automatisé : `npm run test:site` avec le serveur sur `http://localhost:3000`.
 
 ### Règles pour ne pas le ralentir
 

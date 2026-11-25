@@ -9,7 +9,7 @@ import path from "node:path";
 
 const ROOT = "public/images";
 const OUT = "src/content/images.generated.json";
-const MAX = 2000;
+const MAX = 1600;
 const SKIP = new Set(["logo.jpg"]);
 
 async function* walk(dir) {
@@ -30,7 +30,7 @@ for await (const file of walk(ROOT)) {
     const { width } = await input.metadata();
     const buffer = await input
       .resize({ width: Math.min(width, MAX), withoutEnlargement: true })
-      .jpeg({ quality: 82, progressive: true, mozjpeg: true })
+      .jpeg({ quality: 78, progressive: true, mozjpeg: true })
       .toBuffer();
     target = file.replace(/\.(png|jpeg)$/i, ".jpg");
     const before = (await stat(file)).size;
