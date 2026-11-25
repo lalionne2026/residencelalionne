@@ -51,12 +51,21 @@ export const appartements: Appartement[] = [
         alt: "Vue d'ensemble du salon et de la salle à manger",
       },
       { src: "/images/appartement-1/03.jpg", alt: "Table à manger dressée" },
+      {
+        src: "/images/appartement-1/appartement1-salle-a-manger.jpg",
+        alt: "Salle à manger de l'appartement N°1",
+      },
       { src: "/images/appartement-1/05.jpg", alt: "Cuisine équipée" },
       {
-        src: "/images/appartement-2/10.jpg",
-        alt: "Nouvelle vue de la cuisine",
+        src: "/images/appartement-1/appartement1-cuisine.jpg",
+        alt: "Cuisine équipée de l'appartement N°1",
       },
+      { src: "/images/appartement-1/04.jpg", alt: "Autre vue du salon" },
       { src: "/images/appartement-1/06.jpg", alt: "Chambre avec lit double" },
+      {
+        src: "/images/appartement-1/appartement1-chambre-2.jpg",
+        alt: "Deuxième vue de la chambre de l'appartement N°1",
+      },
       { src: "/images/appartement-1/07.jpg", alt: "Chambre climatisée" },
       {
         src: "/images/appartement-1/08.jpg",
@@ -64,9 +73,18 @@ export const appartements: Appartement[] = [
       },
       { src: "/images/appartement-1/09.jpg", alt: "Salle de bain avec douche" },
       {
-        src: "/images/appartement-2/12.jpg",
-        alt: "Nouvelle vue de la salle de bain",
+        src: "/images/appartement-1/appartement1-lavabo.jpg",
+        alt: "Lavabo de l'appartement N°1",
       },
+      {
+        src: "/images/appartement-1/appartement1-accesoires-1.jpg",
+        alt: "Détails et accessoires de l'appartement N°1",
+      },
+      {
+        src: "/images/appartement-1/appartement1-complet.jpg",
+        alt: "Vue complète de l'appartement N°1",
+      },
+      { src: "/images/appartement-1/10.jpg", alt: "Vue supplémentaire de l'appartement N°1" },
     ],
   },
   {
@@ -122,6 +140,18 @@ export const appartements: Appartement[] = [
         src: "/images/appartement-2/07.jpg",
         alt: "Chambre avec coussins jaunes",
       },
+      {
+        src: "/images/appartement-2/03.jpg",
+        alt: "Vue supplémentaire de l'appartement N°2",
+      },
+      {
+        src: "/images/appartement-2/appartement 2 suite.jpg",
+        alt: "Suite de l'appartement N°2",
+      },
+      {
+        src: "/images/appartement-2/chambre appartement deux.jpg",
+        alt: "Chambre de l'appartement N°2",
+      },
     ],
   },
   {
@@ -145,16 +175,48 @@ export const appartements: Appartement[] = [
       { src: "/images/appartement-3/01.jpg", alt: "Salon avec canapés rouges" },
       { src: "/images/appartement-3/02.jpg", alt: "Ancienne cuisine équipée" },
       {
-        src: "/images/appartement-2/10.jpg",
-        alt: "Nouvelle vue de la cuisine",
-      },
-      {
         src: "/images/appartement-3/05.jpg",
         alt: "Ancienne salle de bain avec baignoire jacuzzi",
       },
       {
-        src: "/images/appartement-2/12.jpg",
-        alt: "Nouvelle vue de la salle de bain",
+        src: "/images/appartement-3/appartement3-accesoires.jpg",
+        alt: "Détails et accessoires de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-accesoires-1.jpg",
+        alt: "Autres accessoires de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-accesoires-2.jpg",
+        alt: "Détails décoratifs de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-cabine-de-douche.jpg",
+        alt: "Cabine de douche de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-chambre.jpg",
+        alt: "Chambre de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-chambre-2.jpg",
+        alt: "Deuxième chambre de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-cuisine.jpg",
+        alt: "Cuisine équipée de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-cuisine-2.jpg",
+        alt: "Autre vue de la cuisine de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-douche.jpg",
+        alt: "Douche de l'appartement N°3",
+      },
+      {
+        src: "/images/appartement-3/appartement3-wc.jpg",
+        alt: "Toilettes de l'appartement N°3",
       },
     ],
   },
@@ -180,19 +242,27 @@ export const appartements: Appartement[] = [
         src: "/images/appartement-4/01.jpg",
         alt: "Salon avec canapés bleu canard",
       },
-      {
-        src: "/images/appartement-2/10.jpg",
-        alt: "Cuisine équipée",
-      },
       { src: "/images/appartement-4/02.jpg", alt: "Ancienne cuisine équipée" },
+      {
+        src: "/images/appartement-4/appartement4-cuisine.jpg",
+        alt: "Cuisine équipée de l'appartement N°4",
+      },
       {
         src: "/images/appartement-4/03.jpg",
         alt: "Chambre avec rideaux fleuris",
       },
       { src: "/images/appartement-4/04.jpg", alt: "Chambre avec lit double" },
       {
-        src: "/images/appartement-2/12.jpg",
-        alt: "Salle de bain avec douche",
+        src: "/images/appartement-4/appartement4-chambre-1.jpg",
+        alt: "Première vue de la chambre de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-lit-1.jpg",
+        alt: "Lit de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-lit-2.jpg",
+        alt: "Deuxième vue du lit de l'appartement N°4",
       },
       {
         src: "/images/appartement-4/05.jpg",
@@ -201,6 +271,58 @@ export const appartements: Appartement[] = [
       {
         src: "/images/appartement-4/06.jpg",
         alt: "Salle de bain carrelée bleu",
+      },
+      {
+        src: "/images/appartement-4/appartement4-douche.jpg",
+        alt: "Douche de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-jacuzzi.jpg",
+        alt: "Jacuzzi de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-jacuzzi-2.jpg",
+        alt: "Deuxième vue du jacuzzi de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-lavabo.jpg",
+        alt: "Lavabo de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-lavabo-2.jpg",
+        alt: "Deuxième vue du lavabo de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-salle-de-bain.jpg",
+        alt: "Salle de bain complète de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-wc.jpg",
+        alt: "Toilettes de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-balcon.jpg",
+        alt: "Balcon de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-suite.jpg",
+        alt: "Suite de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-accesoires.jpg",
+        alt: "Accessoires de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-accesoires-2.jpg",
+        alt: "Autres accessoires de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-accesoires-3.jpg",
+        alt: "Détails décoratifs de l'appartement N°4",
+      },
+      {
+        src: "/images/appartement-4/appartement4-accesoires-4.jpg",
+        alt: "Derniers accessoires de l'appartement N°4",
       },
     ],
   },
@@ -234,6 +356,26 @@ export const appartements: Appartement[] = [
       {
         src: "/images/studio/salle-de-bain.jpg",
         alt: "Salle de bain du studio avec jacuzzi",
+      },
+      {
+        src: "/images/studio/studio-canape.jpg",
+        alt: "Studio avec canapé",
+      },
+      {
+        src: "/images/studio/studio-complet.jpg",
+        alt: "Vue complète du studio",
+      },
+      {
+        src: "/images/studio/studio-lit.jpg",
+        alt: "Lit du studio",
+      },
+      {
+        src: "/images/studio/studio-portrait.jpg",
+        alt: "Vue verticale du studio",
+      },
+      {
+        src: "/images/studio/studio-salle-de-bain.jpg",
+        alt: "Vue complémentaire de la salle de bain du studio",
       },
     ],
   },

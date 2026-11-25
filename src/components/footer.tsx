@@ -58,17 +58,6 @@ export function Footer() {
                 </a>
               </li>
             ))}
-            {site.footerPhones.map((p) => (
-              <li key={p.tel}>
-                <a
-                  href={`tel:${p.tel}`}
-                  className="flex gap-3 transition-colors hover:text-gold"
-                >
-                  <Icon name="phone" className="size-5 shrink-0 text-gold" />{" "}
-                  {p.label}
-                </a>
-              </li>
-            ))}
             <li>
               <a
                 href={`mailto:${site.email}`}
